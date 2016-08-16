@@ -7,9 +7,12 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('cabinet');
-  this.route('featured');
-  this.route('browse');
+  this.route('index', {path:'/'}, function() {
+    this.route('cabinet');
+    this.route('featured');
+    this.route('browse');
+  })
 });
+
 
 export default Router;
