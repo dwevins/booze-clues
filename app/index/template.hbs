@@ -1,1 +1,30 @@
+<nav class="nav-pane">
+  <div class="logo">
+    {{#link-to 'index'}}
+      <img src="http://www.placecage.com/200/100" alt="" class="logo-img">
+    {{/link-to}}
+  </div>
+  <div class="nav-links">
+    {{#link-to 'featured'}}Featured{{/link-to}}
+    {{#link-to 'browse'}}Browse{{/link-to}}
+    {{#link-to 'cabinet'}}Cabinet{{/link-to}}
+  </div>
+  <div class="account-buttons">
+    {{!-- {{#link-to 'login'}}Login{{/link-to}}
+    {{#link-to 'register'}}Register{{/link-to}} --}}
+  </div>
+
+  <div class="site-info">
+    <p class="copyright">Designed by James Ridley and Woody Evins</p>
+    <p class="data-source">Data sourced from Absolut</p>
+    <p class="made-with">
+      Made using
+      <a href="#" class="ember-link">Ember</a>
+      and
+      <a href="#" class="materialize-link">Materialize</a>
+    </p>
+  </div>
+
+</nav>
+
 {{outlet}}
