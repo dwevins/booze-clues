@@ -1,0 +1,19 @@
+
+\.featured-title {
+  text-align: center;
+}
+.scroll-banner {
+  display: flex;
+  overflow-x: scroll;
+  width: 100%;
+  &__item {
+    display: flex;
+    width: 100vw;
+    background: orange;
+  }
+}
+
+.featured-text {
+  padding: $gutter;
+
+}

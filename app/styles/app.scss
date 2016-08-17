@@ -5,9 +5,10 @@ $gutter: 1rem;
 // Materialize styles
 @import "custom-materialize";
 @import 'box-sizing';
+@import 'base';
 @import 'nav-pane';
-@import 'display-pane';
+// @import 'display-pane';
 @import 'overlay';
+@import 'browse';
 @import 'recipe';
-
-@import "blame-materialize";
+@import 'featured';

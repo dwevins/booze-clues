@@ -1,0 +1,11 @@
+.app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.display-pane {
+  flex-grow: 1;
+  overflow-y: scroll;
+  background: blue;
+}

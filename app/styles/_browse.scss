@@ -1,0 +1,19 @@
+.page-title {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  padding: 1rem;
+  margin: $gutter/2;
+}
+
+.drink-recipe-link {
+  text-decoration: none;
+  color: black;
+}
