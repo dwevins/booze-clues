@@ -2,7 +2,8 @@
 $roboto-font-path: '../assets/';
 
 // Materialize styles
-@import "custom-materialize";
+// @import "custom-materialize";
+@import 'box-sizing';
 @import 'nav-pane';
 @import 'display-pane';
 $gutter: 1rem;
