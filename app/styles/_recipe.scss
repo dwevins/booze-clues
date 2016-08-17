@@ -1,55 +1,39 @@
-.page-title {
-  text-align: center;
-}
-
-.row {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.card {
-  margin: $gutter/2;
-}
-
-.drink-recipe-link {
-  text-decoration: none;
-  color: black;
-}
-
 .recipe-top {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: $gutter;
+
   &__left {
+    }
 
-  }
   &__right {
-
-  }
+    }
 }
-.recipe {
 
+.recipe {
   &-title {
     margin: 0;
   }
 }
- .ingredients {
-   font-size: 2rem;
 
-   &-list {
-      margin: 0;
-     &__item {
-       font-size: 1rem;
-     }
-   }
- }
+.ingredients {
+  font-size: 2rem;
+
+  &-list {
+    margin: 0;
+
+    &__item {
+      font-size: 1rem;
+    }
+  }
+}
 
 .recipe-frame {
   width: 15rem;
   padding: 0;
   margin: 0;
+
   &__picture {
     width: 100%;
   }
