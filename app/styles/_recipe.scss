@@ -1,4 +1,3 @@
-
 .page-title {
   text-align: center;
 }
@@ -8,20 +7,60 @@
   justify-content: center;
   flex-wrap: wrap;
 }
+
 .card {
   margin: $gutter/2;
-}
-.drink-frame {
-  width: 15rem;
-  padding: $gutter;
-  &__picture {
-    width: 100%;
-  }
-  &__name {
-  }
 }
 
 .drink-recipe-link {
   text-decoration: none;
   color: black;
+}
+
+.recipe-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: $gutter;
+  &__left {
+
+  }
+  &__right {
+
+  }
+}
+.recipe {
+
+  &-title {
+    margin: 0;
+  }
+}
+ .ingredients {
+   font-size: 2rem;
+
+   &-list {
+      margin: 0;
+     &__item {
+       font-size: 1rem;
+     }
+   }
+ }
+
+.recipe-frame {
+  width: 15rem;
+  padding: 0;
+  margin: 0;
+  &__picture {
+    width: 100%;
+  }
+}
+
+.recipe-bottom {
+  padding: $gutter;
+}
+
+.recipe-instructions {
+  &__text {
+    font-size: 1.5rem;
+  }
 }
