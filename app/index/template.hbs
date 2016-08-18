@@ -41,20 +41,30 @@
   <div class="display-pane">
     {{#if isRegisterModalVisible}}
       {{#modal-dialog translucentOverlay=true}}
-        <h3>Register</h3>
-        {{#simple-form as |regitserValues|}}
-          {{!-- input --}}
-
+        <div class="modal-head">
+          <h3>Register</h3>
+        </div>
+        {{#simple-form onsubmit=(action 'register') as |regitserValues|}}
+          {{input value=registerValues.email placeholder='Email'}}
+          {{input value=registerValues.password placeholder='Password'}}
+          <div class="form-buttons">
+            <button class="waves-effect waves-light btn" {{action "toggleRegisterModal"}}>Cancel</button>
+            <button type="submit" class="waves-effect waves-light btn">Register</button>
+          </div>
         {{/simple-form}}
-        <button class="waves-effect waves-light btn" {{action "toggleRegisterModal"}}>Close</button>
       {{/modal-dialog}}
     {{/if}}
     {{#if isLoginModalVisible}}
       {{#modal-dialog translucentOverlay=true}}
         <h3>Login</h3>
-        {{#simple-form}}
+        {{#simple-form onsubmit=(action 'login') as |loginValues|}}
+          {{input value=loginValues.email placeholder='Email'}}
+          {{input value=loginValues.password placeholder='Password'}}
+          <div class="form-buttons">
+            <button class="waves-effect waves-light btn" {{action "toggleLoginModal"}}>Cancel</button>
+            <button type="submit" class="waves-effect waves-light btn">Login</button>
+          </div>
         {{/simple-form}}
-        <button class="waves-effect waves-light btn" {{action "toggleLoginModal"}}>Close</button>
       {{/modal-dialog}}
     {{/if}}
     {{outlet}}

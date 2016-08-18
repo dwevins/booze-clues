@@ -17,5 +17,13 @@ export default Ember.Controller.extend({
     toggleRegisterModal: function() {
       this.toggleProperty('isRegisterModalVisible');
     },
+
+    register: function(registerValues) {
+      //
+    },
+
+    login: function(loginValues) {
+      //
+    },
   },
 });
