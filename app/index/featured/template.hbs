@@ -2,76 +2,85 @@
   <h2 class="featured-title">What's Hot</h2>
 
   <div class="scroll-banner">
-    <div class="scroll-banner__item">
-      <div class="featured-text">
-        <h3 class="featured-text__title">Old Fashioned</h3>
-        <ul class="featured-ingredients">
-          <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
-          <li class="feauted-ingredients__item">
-            whiskey
-          </li>
-          <li class="feauted-ingredients__item">
-            ice
-          </li>
-          <li class="feauted-ingredients__item">
-            bitters
-          </li>
-          <li class="feauted-ingredients__item">
-            orange
-          </li>
-      </ul>
+    {{#md-carousel fullWidth=true as |carousel|}}
+      <div class="carousel-fixed-item center">
+        <button class="btn waves-effect white grey-text darken-text-2" {{action carousel.next}}>button</button>
       </div>
-      <div class="featured-frame">
-        <img src="https://placebear.com/350/500" alt="" class="featured-frame__picture">
-      </div>
-    </div>
-
-    <div class="scroll-banner__item green">
-      <div class="featured-text">
-        <h3 class="featured-text__title">Long Island Iced Tea</h3>
-        <ul class="featured-ingredients">
-          <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
-          <li class="feauted-ingredients__item">
-            whiskey
-          </li>
-          <li class="feauted-ingredients__item">
-            ice
-          </li>
-          <li class="feauted-ingredients__item">
-            bitters
-          </li>
-          <li class="feauted-ingredients__item">
-            orange
-          </li>
-      </ul>
-      </div>
-      <div class="featured-frame">
-        <img src="https://fillmurray.com/350/500" alt="" class="featured-frame__picture">
-      </div>
-    </div>
-
-    <div class="scroll-banner__item">
-      <div class="featured-text">
-        <h3 class="featured-text__title">Margarita</h3>
-        <ul class="featured-ingredients">
-          <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
-          <li class="feauted-ingredients__item">
-            whiskey
-          </li>
-          <li class="feauted-ingredients__item">
-            ice
-          </li>
-          <li class="feauted-ingredients__item">
-            bitters
-          </li>
-          <li class="feauted-ingredients__item">
-            orange
-          </li>
-      </ul>
-      </div>
-      <div class="featured-frame">
-        <img src="https://placekitten.com/350/500" alt="" class="featured-frame__picture">
-      </div>
-    </div>
+      <a class="carousel-item" href="#one!">
+        <div class="scroll-banner__item">
+          <div class="featured-text">
+            <h3 class="featured-text__title">Old Fashioned</h3>
+            <ul class="featured-ingredients">
+              <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
+              <li class="feauted-ingredients__item">
+                whiskey
+              </li>
+              <li class="feauted-ingredients__item">
+                ice
+              </li>
+              <li class="feauted-ingredients__item">
+                bitters
+              </li>
+              <li class="feauted-ingredients__item">
+                orange
+              </li>
+            </ul>
+          </div>
+          <div class="featured-frame">
+            <img src="https://placebear.com/350/500" alt="" class="featured-frame__picture">
+          </div>
+        </div>
+      </a>
+      <a class="carousel-item" href="#two!">
+        <div class="scroll-banner__item green">
+          <div class="featured-text">
+            <h3 class="featured-text__title">Long Island Iced Tea</h3>
+            <ul class="featured-ingredients">
+              <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
+              <li class="feauted-ingredients__item">
+                whiskey
+              </li>
+              <li class="feauted-ingredients__item">
+                ice
+              </li>
+              <li class="feauted-ingredients__item">
+                bitters
+              </li>
+              <li class="feauted-ingredients__item">
+                orange
+              </li>
+            </ul>
+          </div>
+          <div class="featured-frame">
+            <img src="https://fillmurray.com/350/500" alt="" class="featured-frame__picture">
+          </div>
+        </div>
+      </a>
+      <a class="carousel-item" href="#three!">
+        <div class="scroll-banner__item">
+          <div class="featured-text">
+            <h3 class="featured-text__title">Margarita</h3>
+            <ul class="featured-ingredients">
+              <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
+              <li class="feauted-ingredients__item">
+                whiskey
+              </li>
+              <li class="feauted-ingredients__item">
+                ice
+              </li>
+              <li class="feauted-ingredients__item">
+                bitters
+              </li>
+              <li class="feauted-ingredients__item">
+                orange
+              </li>
+            </ul>
+          </div>
+          <div class="featured-frame">
+            <img src="https://placekitten.com/350/500" alt="" class="featured-frame__picture">
+          </div>
+        </div>
+      </a>
+    {{/md-carousel}}
   </div>
 </div>
