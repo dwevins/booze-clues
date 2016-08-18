@@ -4,11 +4,11 @@ $roboto-font-path: '../assets/';
 $gutter: 1rem;
 // Materialize styles
 @import "custom-materialize";
+@import "ember-modal-dialog/ember-modal-structure";
+@import "ember-modal-dialog/ember-modal-appearance";
 @import 'box-sizing';
 @import 'base';
 @import 'nav-pane';
-// @import 'display-pane';
-@import 'overlay';
 @import 'browse';
 @import 'recipe';
 @import 'featured';
