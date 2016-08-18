@@ -38,6 +38,15 @@
   </nav>
 
   <div class="display-pane">
+    {{#if registerDialog}}
+      {{!-- show register modal --}}
+    {{/if}}
+    {{#if loginDialog}}
+      {{!-- show login modal --}}
+    {{/if}}
+    {{#modal-dialog translucentOverlay=true overlayClassNames="overlay" wrapperClassNames='wrapper'}}
+      whatup
+    {{/modal-dialog}}
     {{outlet}}
   </div>
 </div>
