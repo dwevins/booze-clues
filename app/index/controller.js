@@ -4,6 +4,11 @@ export default Ember.Controller.extend({
   isRegisterModalVisible: false,
   isLoginModalVisible: false,
 
+  queryParams: {
+    isRegisterModalVisible: 'register',
+    isLoginModalVisible: 'login',
+  },
+
   actions: {
     toggleLoginModal: function() {
       this.toggleProperty('isLoginModalVisible');
