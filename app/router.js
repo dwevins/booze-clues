@@ -12,7 +12,6 @@ Router.map(function() {
     this.route('featured');
     this.route('recipe');
     this.route('browse');
-    this.route('login');
   })
 });
 

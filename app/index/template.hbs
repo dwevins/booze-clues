@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="account-buttons">
-      {{#link-to 'index.login' class='waves-effect waves-light btn'}}Login{{/link-to}}
+      <button class="waves-effect waves-light btn" {{action "showLoginModal"}}>Login</button>
       {{!-- {{#link-to 'register'}}Register{{/link-to}} --}}
     </div>
 
@@ -38,6 +38,17 @@
   </nav>
 
   <div class="display-pane">
+    {{#if isRegisterModalVisible}}
+      {{#modal-dialog translucentOverlay=true}}
+        register
+      {{/modal-dialog}}
+    {{/if}}
+    {{#if isLoginModalVisible}}
+      {{#modal-dialog translucentOverlay=true}}
+        login
+        <button class="waves-effect waves-light btn" {{action "toggleLoginModal"}}>Close</button>
+      {{/modal-dialog}}
+    {{/if}}
     {{outlet}}
   </div>
 </div>
