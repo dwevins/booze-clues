@@ -1,18 +1,26 @@
 
-\.featured-title {
+.featured-title {
   text-align: center;
 }
+
 .scroll-banner {
   display: flex;
   overflow-x: scroll;
+      // overflow: hidden;
+      position: relative;
   width: 100%;
   &__item {
     display: flex;
-    width: 100vw;
+    width: 100%;
+    flex-shrink: 0;
     background: orange;
+    // animation: slideshow 10s linear infinite;
   }
 }
 
+.green {
+  background: green;
+}
 .featured-text {
   padding: $gutter;
 
