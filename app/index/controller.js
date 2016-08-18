@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   isRegisterModalVisible: false,
   isLoginModalVisible: false,
+  isLoggedIn: false,
 
   queryParams: {
     isRegisterModalVisible: 'register',
@@ -19,11 +20,11 @@ export default Ember.Controller.extend({
     },
 
     register: function(registerValues) {
-      //
+      this.toggleProperty('isRegisterModalVisible');
     },
 
     login: function(loginValues) {
-      //
+      this.toggleProperty('isLoginModalVisible');
     },
   },
 });
