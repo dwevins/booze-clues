@@ -44,9 +44,9 @@
         <div class="modal-head">
           <h3>Register</h3>
         </div>
-        {{#simple-form onsubmit=(action 'register') as |regitserValues|}}
+        {{#simple-form onsubmit=(action 'register') as |registerValues|}}
           {{input value=registerValues.email placeholder='Email'}}
-          {{input value=registerValues.password placeholder='Password'}}
+          {{input type='password' value=registerValues.password placeholder='Password'}}
           <div class="form-buttons">
             <button class="waves-effect waves-light btn" {{action "toggleRegisterModal"}}>Cancel</button>
             <button type="submit" class="waves-effect waves-light btn">Register</button>
@@ -59,7 +59,7 @@
         <h3>Login</h3>
         {{#simple-form onsubmit=(action 'login') as |loginValues|}}
           {{input value=loginValues.email placeholder='Email'}}
-          {{input value=loginValues.password placeholder='Password'}}
+          {{input type='password' value=loginValues.password placeholder='Password'}}
           <div class="form-buttons">
             <button class="waves-effect waves-light btn" {{action "toggleLoginModal"}}>Cancel</button>
             <button type="submit" class="waves-effect waves-light btn">Login</button>
