@@ -1,23 +1,36 @@
-.nav-pane {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #c5cdcd;
-  width: 15rem;
-  flex-shrink: 0;
+.nav {
+
+  &-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #c5cdcd;
+    width: 15rem;
+    flex-shrink: 0;
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__link {
+      margin: 0;
+      padding: $gutter;
+      font-size: 2rem;
+      text-align: center;
+      width: 100%;
+    }
+  }
 }
 
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+.account {
 
-  &__link {
-    margin: 0;
-    padding: $gutter;
-    font-size: 2rem;
+  &__buttons {
     text-align: center;
-    width: 100%;
+    &--btn {
+      margin: 0.5 * $gutter;
+    }
   }
 }
 

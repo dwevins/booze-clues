@@ -16,9 +16,10 @@
         {{#link-to 'index.cabinet'}}Cabinet{{/link-to}}
       </div>
     </div>
-    <div class="account-buttons">
-      <button class="waves-effect waves-light btn" {{action "showLoginModal"}}>Login</button>
-      {{!-- {{#link-to 'register'}}Register{{/link-to}} --}}
+    <div class="account__buttons">
+      <button class="waves-effect waves-light btn account__buttons--btn" {{action "toggleLoginModal"}}>Login</button>
+      <button class="waves-effect waves-light btn account__buttons--btn" {{action "toggleRegisterModal"}}>Register</button>
+
     </div>
 
     <div class="site-info">
@@ -40,13 +41,30 @@
   <div class="display-pane">
     {{#if isRegisterModalVisible}}
       {{#modal-dialog translucentOverlay=true}}
-        register
+        <div class="modal-head">
+          <h3>Register</h3>
+        </div>
+        {{#simple-form onsubmit=(action 'register') as |registerValues|}}
+          {{input value=registerValues.email placeholder='Email'}}
+          {{input type='password' value=registerValues.password placeholder='Password'}}
+          <div class="form-buttons">
+            <button class="waves-effect waves-light btn" {{action "toggleRegisterModal"}}>Cancel</button>
+            <button type="submit" class="waves-effect waves-light btn">Register</button>
+          </div>
+        {{/simple-form}}
       {{/modal-dialog}}
     {{/if}}
     {{#if isLoginModalVisible}}
       {{#modal-dialog translucentOverlay=true}}
-        login
-        <button class="waves-effect waves-light btn" {{action "toggleLoginModal"}}>Close</button>
+        <h3>Login</h3>
+        {{#simple-form onsubmit=(action 'login') as |loginValues|}}
+          {{input value=loginValues.email placeholder='Email'}}
+          {{input type='password' value=loginValues.password placeholder='Password'}}
+          <div class="form-buttons">
+            <button class="waves-effect waves-light btn" {{action "toggleLoginModal"}}>Cancel</button>
+            <button type="submit" class="waves-effect waves-light btn">Login</button>
+          </div>
+        {{/simple-form}}
       {{/modal-dialog}}
     {{/if}}
     {{outlet}}
