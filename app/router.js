@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('index', {path:'/'}, function() {
     this.route('cabinet');
-    this.route('featured');
+    this.route('featured', {path:'/'});
     this.route('recipe');
     this.route('browse');
   })
