@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
   isRegisterModalVisible: false,
   isLoginModalVisible: false,
   isLoggedIn: false,
+  userIsOfAge: false,
 
   queryParams: {
     isRegisterModalVisible: 'register',
@@ -11,6 +12,14 @@ export default Ember.Controller.extend({
   },
 
   actions: {
+    allowUserToEnter: function() {
+        this.toggleProperty('userIsOfAge')
+    },
+
+    blockUserFromSite: function() {
+
+    },
+
     toggleLoginModal: function() {
       this.toggleProperty('isLoginModalVisible');
     },
@@ -21,12 +30,10 @@ export default Ember.Controller.extend({
 
     register: function(registerValues) {
       this.toggleProperty('isRegisterModalVisible');
-      console.log(registerValues);
     },
 
     login: function(loginValues) {
       this.toggleProperty('isLoginModalVisible');
-      console.log(loginValues);
     },
   },
 });
