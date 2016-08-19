@@ -1,4 +1,14 @@
 <div class="app">
+  {{#unless userIsOfAge}}
+    {{#modal-dialog translucentOverlay=true overlay-class='age-conf-bg'}}
+      <div class="modal-head">
+        Age confirmation
+      </div>
+      <p>You must be 21 years of age or older to use this website.</p>
+      <button class='waves-effect waves-light btn account__buttons--btn' {{action 'allowUserToEnter'}}>I'm over 21</button>
+      <button class='waves-effect waves-light btn account__buttons--btn' {{action 'blockUserFromSite'}}>I'm under 21</button>
+    {{/modal-dialog}}
+  {{/unless}}
   <nav class="nav-pane">
     <div class="logo">
       {{#link-to 'index'}}
