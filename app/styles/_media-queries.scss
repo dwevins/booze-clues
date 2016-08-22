@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+  //MQ for moving nav pane to bottom
+  .app {
+    flex-direction: column-reverse;
+  }
+
+  .display-pane {
+    // overflow-y: auto;
+  }
+
+  .nav {
+
+    &-pane {
+      flex-direction: row;
+    }
+  }
+}
