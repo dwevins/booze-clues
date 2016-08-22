@@ -2,6 +2,9 @@
 $roboto-font-path: '../assets/';
 
 $gutter: 1rem;
+$max-content-width: 60rem;
+$min-content-width: 10rem;
+
 // Materialize styles
 @import "custom-materialize";
 @import "ember-modal-dialog/ember-modal-structure";
@@ -13,3 +16,4 @@ $gutter: 1rem;
 @import 'recipe';
 @import 'featured';
 @import 'blame-materialize';
+@import 'media-queries'

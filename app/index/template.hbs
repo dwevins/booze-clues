@@ -10,40 +10,42 @@
     {{/modal-dialog}}
   {{/unless}}
   <nav class="nav-pane">
-    <div class="logo">
-      {{#link-to 'index'}}
-        <img src="http://www.placecage.com/200/100" alt="" class="logo-img">
-      {{/link-to}}
-    </div>
-    <div class="nav-links">
-      <div class="nav-links__link">
-        {{#link-to 'index.featured'}}Featured{{/link-to}}
+    <div class="container">
+      <div class="logo">
+        {{#link-to 'index'}}
+          <img src="http://www.placecage.com/200/100" alt="" class="logo-img">
+        {{/link-to}}
       </div>
-      <div class="nav-links__link">
-        {{#link-to 'index.browse'}}Browse{{/link-to}}
+      <div class="nav-links">
+        <div class="nav-links__link">
+          {{#link-to 'index.featured'}}Featured{{/link-to}}
+        </div>
+        <div class="nav-links__link">
+          {{#link-to 'index.browse'}}Browse{{/link-to}}
+        </div>
+        <div class="nav-links__link">
+          {{#link-to 'index.cabinet'}}Cabinet{{/link-to}}
+        </div>
       </div>
-      <div class="nav-links__link">
-        {{#link-to 'index.cabinet'}}Cabinet{{/link-to}}
-      </div>
-    </div>
-    <div class="account__buttons">
-      <button class="waves-effect waves-light btn account__buttons--btn" {{action "toggleLoginModal"}}>Login</button>
-      <button class="waves-effect waves-light btn account__buttons--btn" {{action "toggleRegisterModal"}}>Register</button>
+      <div class="account__buttons">
+        <button class="waves-effect waves-light btn account__buttons--btn" {{action "toggleLoginModal"}}>Login</button>
+        <button class="waves-effect waves-light btn account__buttons--btn" {{action "toggleRegisterModal"}}>Register</button>
 
-    </div>
+      </div>
 
-    <div class="site-info">
-      <p class="copyright">Designed by James Ridley and Woody Evins</p>
-      <p class="data-source">Data sourced from
-        <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
-      </p>
-      <p class="made-with">
-        Made using
-        <a href="http://emberjs.com/" class="ember-link">Ember</a>
-        and
-        <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
-      </p>
-      <p class="disclaimer">Please drink responsibly</p>
+      <div class="site-info">
+        <p class="copyright">Designed by James Ridley and Woody Evins</p>
+        <p class="data-source">Data sourced from
+          <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
+        </p>
+        <p class="made-with">
+          Made using
+          <a href="http://emberjs.com/" class="ember-link">Ember</a>
+          and
+          <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
+        </p>
+        <p class="disclaimer">Please drink responsibly</p>
+      </div>
     </div>
 
   </nav>
