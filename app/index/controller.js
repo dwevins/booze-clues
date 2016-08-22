@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   userIsOfAge: false,
 
   cookies: Ember.inject.service(),
+  session: Ember.inject.service(),
 
   queryParams: {
     isRegisterModalVisible: 'register',
@@ -51,7 +52,13 @@ export default Ember.Controller.extend({
       newUser.save().then(() => {
         this.transitionToRoute('index');
       })
+    },
 
+      login(formValues) {
+        const authenticator = 'authenticator:application';
+
+        this.get('session').authenticate(authenticator,
+          { identification: formValues.email, password: formValues.password });
     },
   },
 });
