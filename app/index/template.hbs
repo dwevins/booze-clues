@@ -56,7 +56,9 @@
         <div class="modal-head">
           <h3>Register</h3>
         </div>
-        {{#simple-form onsubmit=(action 'register') as |registerValues|}}
+
+        {{#simple-form onsubmit=(action 'registerUser') as |registerValues|}}
+          {{input value=registerValues.username placeholder='Username'}}
           {{input value=registerValues.email placeholder='Email'}}
           {{input type='password' value=registerValues.password placeholder='Password'}}
           <div class="form-buttons">
@@ -64,6 +66,7 @@
             <button type="submit" class="waves-effect waves-light btn">Register</button>
           </div>
         {{/simple-form}}
+
       {{/modal-dialog}}
     {{/if}}
     {{#if isLoginModalVisible}}

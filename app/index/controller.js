@@ -46,5 +46,12 @@ export default Ember.Controller.extend({
     login: function(loginValues) {
       this.toggleProperty('isLoginModalVisible');
     },
+    registerUser(formValues) {
+      const newUser = this.store.createRecord('user', formValues);
+      newUser.save().then(() => {
+        this.transitionToRoute('index');
+      })
+
+    },
   },
 });
