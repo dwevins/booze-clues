@@ -1,5 +1,8 @@
 .featured-title {
   text-align: center;
+  color: $secondary-color;
+  font-family: Roboto, sans-serif;
+  font-weight: 300;
 }
 
 .scroll-banner {
@@ -8,16 +11,31 @@
   width: 100%;
   &__item {
     display: flex;
+    justify-content: center;
     width: 100%;
     flex-shrink: 0;
-    // background: orange;
+    // background: #791204;
     // animation: slideshow 10s linear infinite;
   }
 }
-.green {
-  // background: green;
-}
+
 .featured-text {
   padding: $gutter;
-
+  &__title {
+    color: $secondary-color;
+    font-family: Roboto, sans-serif;
+    font-weight: lighter;
+  }
+}
+.featured-ingredients {
+  &-title {
+    color: $secondary-color;
+    font-family: Roboto, sans-serif;
+    font-weight: lighter;
+  }
+}
+.feauted-ingredients__item{
+  color: $secondary-color;
+  font-family: Roboto, sans-serif;
+  font-weight: lighter;
 }
