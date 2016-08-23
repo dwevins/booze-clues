@@ -4,14 +4,18 @@
   font-family: Roboto, sans-serif;
   font-weight: 300;
 }
-
+.next {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+}
 .scroll-banner {
   display: flex;
   overflow-x: scroll;
   width: 100%;
   &__item {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     width: 100%;
     flex-shrink: 0;
     // background: #791204;
@@ -38,4 +42,14 @@
   color: $secondary-color;
   font-family: Roboto, sans-serif;
   font-weight: lighter;
+}
+
+.featured-frame {
+  width: 20rem;
+  &__picture {
+    width: 100%;
+  }
+}
+.flex {
+  // display: flex;
 }
