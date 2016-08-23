@@ -54,7 +54,6 @@ export default Ember.Controller.extend({
       })
     },
 
-
     login(formValues) {
       const authenticator = 'authenticator:application';
 
@@ -65,6 +64,10 @@ export default Ember.Controller.extend({
         .then(() => {
           this.transitionToRoute('/cabinet');
         })
+        .catch(() => {
+
+          window.alert('Username/Password incorrect.');
+        });
     },
   },
 });
