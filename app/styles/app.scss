@@ -2,18 +2,21 @@
 $roboto-font-path: '../assets/';
 
 $gutter: 1rem;
+$primary-color: #fff;
+$secondary-color: #000;
+$third-color: #e5e5e5;
 $max-content-width: 60rem;
 $min-content-width: 10rem;
 
 // Materialize styles
 @import "custom-materialize";
+@import 'blame-materialize';
+@import 'media-queries';
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
 @import 'box-sizing';
 @import 'base';
-@import 'nav-pane';
 @import 'browse';
 @import 'recipe';
 @import 'featured';
-@import 'blame-materialize';
-@import 'media-queries'
+@import 'nav-pane';
