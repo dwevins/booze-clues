@@ -40,6 +40,7 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
   }
+
   ENV['ember-simple-auth-token'] = {
      serverTokenEndpoint: `${ENV.DS.host}/token-auth`,
      tokenPropertyName: 'access_token',
