@@ -54,11 +54,20 @@ export default Ember.Controller.extend({
       })
     },
 
-      login(formValues) {
-        const authenticator = 'authenticator:application';
+    login(formValues) {
+      const authenticator = 'authenticator:application';
 
-        this.get('session').authenticate(authenticator,
-          { identification: formValues.email, password: formValues.password });
+      this.get('session').authenticate(authenticator, {
+          identification: formValues.email,
+          password: formValues.password,
+        })
+        .then(() => {
+          this.transitionToRoute('/cabinet');
+        })
+        .catch(() => {
+
+          window.alert('Username/Password incorrect.');
+        });
     },
   },
 });
