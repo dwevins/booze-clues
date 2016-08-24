@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   userIsOfAge: false,
 
   cookies: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
   session: Ember.inject.service(),
 
   queryParams: {
@@ -62,11 +63,11 @@ export default Ember.Controller.extend({
           password: formValues.password,
         })
         .then(() => {
-          flashMessages.success('Success!');
+          this.get('flashMessages').success('User logged in.');
           this.transitionToRoute('/cabinet');
         })
         .catch(() => {
-          window.alert('Username/Password incorrect.');
+          this.get('flashMessages').warning('Username/Password incorrect.');
         });
     },
   },

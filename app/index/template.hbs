@@ -49,9 +49,15 @@
     </div>
 
   </nav>
-  {{#each flashMessages.queue as |flash|}}
-    {{flash-message flash=flash}}
-  {{/each}}
+
+  <div class="flash-messages">
+    {{#each flashMessages.queue as |flash|}}
+      {{#flash-message flash=flash class="success-message" as |message|}}
+        <p>{{flash.message}}</p>
+      {{/flash-message}}
+    {{/each}}
+  </div>
+
   <div class="display-pane">
     {{#if isRegisterModalVisible}}
       {{#modal-dialog translucentOverlay=true}}
