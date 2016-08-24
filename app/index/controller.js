@@ -7,6 +7,7 @@ export default Ember.Controller.extend({
   userIsOfAge: false,
 
   cookies: Ember.inject.service(),
+  flashMessages: Ember.inject.service(),
   session: Ember.inject.service(),
 
   queryParams: {
@@ -50,8 +51,12 @@ export default Ember.Controller.extend({
     registerUser(formValues) {
       const newUser = this.store.createRecord('user', formValues);
       newUser.save().then(() => {
+        this.get('flashMessages').success('Bill Murray accepts your application.');
         this.transitionToRoute('index');
       })
+      .catch(() => {
+        this.get('flashMessages').warning('Username/Email already in use.');
+      });
     },
 
     login(formValues) {
@@ -62,11 +67,11 @@ export default Ember.Controller.extend({
           password: formValues.password,
         })
         .then(() => {
+          this.get('flashMessages').success('User logged in.');
           this.transitionToRoute('/cabinet');
         })
         .catch(() => {
-
-          window.alert('Username/Password incorrect.');
+          this.get('flashMessages').warning('Username/Password incorrect.');
         });
     },
   },

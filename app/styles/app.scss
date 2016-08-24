@@ -22,3 +22,18 @@ $font: Roboto, sans-serif;
 @import 'recipe';
 @import 'featured';
 @import 'nav-pane';
+
+.flash-messages {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000000;
+}
+
+.success-message {
+  background: green;
+
+  &.alert-warning {
+    background: red;
+  }
+}
