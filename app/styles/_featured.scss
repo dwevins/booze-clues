@@ -1,24 +1,26 @@
 .featured-title {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   color: $secondary-color;
   font-family: Roboto, sans-serif;
   font-weight: 300;
-}
-.next {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
-}
+  letter-spacing: 1rem;
+  &__spacing {
+      padding: 0 2rem;
+    }
+  }
+
 .scroll-banner {
   display: flex;
   overflow-x: scroll;
   width: 100%;
   &__item {
     display: flex;
-    // justify-content: center;
+    justify-content: space-between;
     width: 100%;
     flex-shrink: 0;
-    // background: #791204;
+    background: $third-color;
     // animation: slideshow 10s linear infinite;
   }
 }
@@ -29,19 +31,24 @@
     color: $secondary-color;
     font-family: Roboto, sans-serif;
     font-weight: lighter;
+    text-align: left;
   }
 }
 .featured-ingredients {
   &-title {
+    margin: 0;
     color: $secondary-color;
     font-family: Roboto, sans-serif;
     font-weight: lighter;
+    text-align: left;
+    padding-bottom: $gutter;
   }
 }
 .feauted-ingredients__item{
   color: $secondary-color;
   font-family: Roboto, sans-serif;
   font-weight: lighter;
+  text-align: left;
 }
 
 .featured-frame {
@@ -49,7 +56,4 @@
   &__picture {
     width: 100%;
   }
-}
-.flex {
-  // display: flex;
 }

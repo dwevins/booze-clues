@@ -1,5 +1,3 @@
-
-
 .logo {
   margin: $gutter auto;
   width: 10rem;
@@ -16,6 +14,7 @@
     background-color: $primary-color;
     width: 15rem;
     flex-shrink: 0;
+    margin: $gutter;
   }
 
   &-links {
