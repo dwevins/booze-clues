@@ -2,9 +2,6 @@
   <h2 class="featured-title"><span class="featured-title__spacing">FEATURED</span><span class="featured-title__spacing">DRINKS</span></h2>
   <div class="scroll-banner">
     {{#md-carousel fullWidth=true as |carousel|}}
-      <div class="carousel-fixed-item center">
-        <button class="btn waves-effect white grey-text darken-text-2" {{action carousel.next}}>button</button>
-      </div>
       <a class="carousel-item" href="#one!">
         <div class="scroll-banner__item">
           <div class="featured-text ">
@@ -80,6 +77,9 @@
           </div>
         </div>
       </a>
+      <div class="carousel-fixed-item center">
+        <button class="btn waves-effect white grey-text darken-text-2" {{action carousel.next}}>button</button>
+      </div>
     {{/md-carousel}}
   </div>
 </div>
