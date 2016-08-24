@@ -9,31 +9,31 @@
       <button class='waves-effect waves-light btn account__buttons--btn' {{action 'blockUserFromSite'}}>I'm under 21</button>
     {{/modal-dialog}}
   {{/unless}}
-  <nav class="nav-pane">
+  <nav class="side-pane">
     <div class="container">
       <div class="logo">
         {{#link-to 'index'}}
-          <img src="http://www.placecage.com/200/100" alt="" class="logo-img">
+          <img src="http://www.fillmurray.com/g/200/100" alt="" class="logo-img">
         {{/link-to}}
       </div>
-      <div class="nav-links">
-        <div class="nav-links__link">
-          {{#link-to 'index.featured'}}Featured{{/link-to}}
+      <div class="side-links">
+        <div class="side-links__link">
+          {{#link-to 'index.featured' class= "links"}}Featured{{/link-to}}
         </div>
-        <div class="nav-links__link">
-          {{#link-to 'index.browse'}}Browse{{/link-to}}
+        <div class="side-links__link">
+          {{#link-to 'index.browse' class= "links"}}Browse{{/link-to}}
         </div>
-        <div class="nav-links__link">
-          {{#link-to 'index.cabinet'}}Cabinet{{/link-to}}
+        <div class="side-links__link">
+          {{#link-to 'index.cabinet' class= "links"}}Cabinet{{/link-to}}
         </div>
       </div>
-      <div class="account__buttons">
-        <button class="waves-effect waves-light btn account__buttons--btn" {{action "toggleLoginModal"}}>Login</button>
-        <button class="waves-effect waves-light btn account__buttons--btn" {{action "toggleRegisterModal"}}>Register</button>
+      <div class="side__buttons">
+        <button class="side__buttons__clicks" {{action "toggleLoginModal"}}>Login</button>
+        <button class="side__buttons__clicks" {{action "toggleRegisterModal"}}>Register</button>
 
       </div>
 
-      <div class="site-info">
+      {{!-- <div class="site-info">
         <p class="copyright">Designed by James Ridley and Woody Evins</p>
         <p class="data-source">Data sourced from
           <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
@@ -45,7 +45,7 @@
           <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
         </p>
         <p class="disclaimer">Please drink responsibly</p>
-      </div>
+      </div> --}}
     </div>
 
   </nav>
@@ -54,16 +54,16 @@
     {{#if isRegisterModalVisible}}
       {{#modal-dialog translucentOverlay=true}}
         <div class="modal-head">
-          <h3>Register</h3>
+          <h3 class="login-register">Register</h3>
         </div>
 
         {{#simple-form onsubmit=(action 'registerUser') as |registerValues|}}
           {{input value=registerValues.username placeholder='Username'}}
           {{input value=registerValues.email placeholder='Email'}}
           {{input type='password' value=registerValues.password placeholder='Password'}}
-          <div class="form-buttons">
-            <button class="waves-effect waves-light btn" {{action "toggleRegisterModal"}}>Cancel</button>
-            <button type="submit" class="waves-effect waves-light btn">Register</button>
+          <div class="register-buttons">
+            <button class="clicks" {{action "toggleRegisterModal"}}>Cancel</button>
+            <button type="submit" class="clicks">Register</button>
           </div>
         {{/simple-form}}
 
@@ -71,13 +71,13 @@
     {{/if}}
     {{#if isLoginModalVisible}}
       {{#modal-dialog translucentOverlay=true}}
-        <h3>Login</h3>
+        <h3 class= "login-register">Login</h3>
         {{#simple-form onsubmit=(action 'login') as |loginValues|}}
           {{input value=loginValues.email placeholder='Email'}}
           {{input type='password' value=loginValues.password placeholder='Password'}}
-          <div class="form-buttons">
-            <button class="waves-effect waves-light btn" {{action "toggleLoginModal"}}>Cancel</button>
-            <button type="submit" class="waves-effect waves-light btn">Login</button>
+          <div class="register-buttons">
+            <button class="clicks" {{action "toggleLoginModal"}}>Cancel</button>
+            <button type="submit" class="clicks">Login</button>
           </div>
         {{/simple-form}}
       {{/modal-dialog}}

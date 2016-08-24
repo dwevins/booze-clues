@@ -1,12 +1,20 @@
-.nav {
+.logo {
+  margin: $gutter auto;
+  width: 10rem;
+  &-img {
+    width: 100%;
+  }
+}
 
+.side {
   &-pane {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #c5cdcd;
+    background-color: $primary-color;
     width: 15rem;
     flex-shrink: 0;
+    margin: $gutter;
   }
 
   &-links {
@@ -23,15 +31,50 @@
     }
   }
 }
-
-.account {
+.links {
+  color: $secondary-color;
+  font-weight: lighter;
+}
+.side-links__link:hover {
+  border-top: 1px solid $secondary-color;
+  border-bottom: 1px solid $secondary-color;
+}
+.side {
 
   &__buttons {
-    text-align: center;
-    &--btn {
-      margin: 0.5 * $gutter;
+    padding-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    &__clicks{
+      margin: $gutter/2;
+      border: none;
+      background: $primary-color;
     }
   }
+}
+.side__buttons__clicks:hover {
+  border-top: 1px solid $secondary-color;
+  border-bottom: 1px solid $secondary-color;
+}
+.display-pane {
+  font-family: $font;
+}
+.login-register {
+  font-family: $font;
+  font-weight: lighter;
+}
+
+.clicks{
+  border: none;
+  background: $primary-color;
+}
+.register-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.clicks:hover{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 }
 
 .site-info {

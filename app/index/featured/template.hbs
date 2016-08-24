@@ -1,14 +1,10 @@
 <div class="featured-body">
-  <h2 class="featured-title">What's Hot</h2>
-
+  <h2 class="featured-title"><span class="featured-title__spacing">FEATURED</span><span class="featured-title__spacing">DRINKS</span></h2>
   <div class="scroll-banner">
     {{#md-carousel fullWidth=true as |carousel|}}
-      <div class="carousel-fixed-item center">
-        <button class="btn waves-effect white grey-text darken-text-2" {{action carousel.next}}>button</button>
-      </div>
       <a class="carousel-item" href="#one!">
         <div class="scroll-banner__item">
-          <div class="featured-text">
+          <div class="featured-text ">
             <h3 class="featured-text__title">Old Fashioned</h3>
             <ul class="featured-ingredients">
               <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
@@ -27,13 +23,13 @@
             </ul>
           </div>
           <div class="featured-frame">
-            <img src="https://placebear.com/350/500" alt="" class="featured-frame__picture">
+            <img src="http://assets.absolutdrinks.com/drinks/300x400/old-fashioned.jpg" alt="" class="featured-frame__picture">
           </div>
         </div>
       </a>
       <a class="carousel-item" href="#two!">
-        <div class="scroll-banner__item green">
-          <div class="featured-text">
+        <div class="scroll-banner__item">
+          <div class="featured-text ">
             <h3 class="featured-text__title">Long Island Iced Tea</h3>
             <ul class="featured-ingredients">
               <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
@@ -52,14 +48,14 @@
             </ul>
           </div>
           <div class="featured-frame">
-            <img src="https://fillmurray.com/350/500" alt="" class="featured-frame__picture">
+            <img src="http://assets.absolutdrinks.com/drinks/300x400/white-russian.png" alt="" class="featured-frame__picture">
           </div>
         </div>
       </a>
       <a class="carousel-item" href="#three!">
         <div class="scroll-banner__item">
-          <div class="featured-text">
-            <h3 class="featured-text__title">Margarita</h3>
+          <div class="featured-text ">
+            <h3 class="featured-text__title">Bloody Mary</h3>
             <ul class="featured-ingredients">
               <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
               <li class="feauted-ingredients__item">
@@ -77,10 +73,13 @@
             </ul>
           </div>
           <div class="featured-frame">
-            <img src="https://placekitten.com/350/500" alt="" class="featured-frame__picture">
+            <img src="http://assets.absolutdrinks.com/drinks/300x400/bloody-mary.png" alt="" class="featured-frame__picture">
           </div>
         </div>
       </a>
+      <div class="carousel-fixed-item center">
+        <button class="btn waves-effect white grey-text darken-text-2" {{action carousel.next}}>button</button>
+      </div>
     {{/md-carousel}}
   </div>
 </div>
