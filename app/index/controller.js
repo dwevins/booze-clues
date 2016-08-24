@@ -51,8 +51,12 @@ export default Ember.Controller.extend({
     registerUser(formValues) {
       const newUser = this.store.createRecord('user', formValues);
       newUser.save().then(() => {
+        this.get('flashMessages').success('Bill Murray accepts your application.');
         this.transitionToRoute('index');
       })
+      .catch(() => {
+        this.get('flashMessages').warning('Username/Email already in use.');
+      });
     },
 
     login(formValues) {
