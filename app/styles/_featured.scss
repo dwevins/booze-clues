@@ -17,16 +17,18 @@
   width: 100%;
   &__item {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     flex-shrink: 0;
-    background: $third-color;
-    // animation: slideshow 10s linear infinite;
+    background: $primary-color;
+    padding: 3rem;
   }
 }
 
 .featured-text {
   padding: $gutter;
+  // border-top: 1px black solid;
+  // border-right: 1px black solid;
   &__title {
     color: $secondary-color;
     font-family: Roboto, sans-serif;
@@ -41,6 +43,7 @@
     font-family: Roboto, sans-serif;
     font-weight: lighter;
     text-align: left;
+    padding-top: $gutter;
     padding-bottom: $gutter;
   }
 }
@@ -53,6 +56,7 @@
 
 .featured-frame {
   width: 20rem;
+  // border-bottom: 1px black solid;
   &__picture {
     width: 100%;
   }

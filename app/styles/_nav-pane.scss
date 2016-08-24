@@ -55,6 +55,26 @@
   border-top: 1px solid $secondary-color;
   border-bottom: 1px solid $secondary-color;
 }
+.display-pane {
+  font-family: $font;
+}
+.login-register {
+  font-family: $font;
+  font-weight: lighter;
+}
+
+.clicks{
+  border: none;
+  background: $primary-color;
+}
+.register-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.clicks:hover{
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 
 .site-info {
   text-align: center;
