@@ -42,9 +42,9 @@ module.exports = function(environment) {
   }
 
   ENV['ember-simple-auth-token'] = {
-     serverTokenEndpoint: `${ENV.DS.host}/token-auth`,
-     tokenPropertyName: 'access_token',
-   };
+    serverTokenEndpoint: `${ENV.DS.host}/token-auth`,
+    tokenPropertyName: 'access_token',
+  };
 
 
   if (environment === 'production') {

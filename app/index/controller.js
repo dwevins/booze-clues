@@ -62,10 +62,10 @@ export default Ember.Controller.extend({
           password: formValues.password,
         })
         .then(() => {
+          flashMessages.success('Success!');
           this.transitionToRoute('/cabinet');
         })
         .catch(() => {
-
           window.alert('Username/Password incorrect.');
         });
     },

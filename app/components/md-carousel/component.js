@@ -5,6 +5,7 @@ export default Ember.Component.extend({
   classNameBindings: ['fullWidth:carousel-slider'],
   classNames: ['carousel'],
 
+
   didInsertElement() {
     this._super(...arguments);
 
