@@ -1,20 +1,12 @@
-<h2 class="page-title">B R O W S E</h2>
-<nav>
+<h2 class="page-title">BROWSE</h2>
+{{!-- <nav>
   <div class="nav-wrapper">
-    <form>
-      {{!-- <div class="input-field">
-          <input class = "search-bar__field" id="search" type="search" required>
-          <label for="search"><i class="material-icons search-bar__btn">search</i></label>
-          <i class="material-icons">close</i>
-        </div> --}}
-      {{!-- {{#list-filter
-   filter=(action 'filterByDrink')
-   as |drinks|}}
-      {{/list-filter}} --}}
 
-    </form>
   </div>
-</nav>
+</nav> --}}
+  {{#list-filter
+filter=(action 'filterByDrink')
+as |drink|}}
 
 <div class="row">
   {{#each model as |drink|}}
@@ -26,6 +18,7 @@
     {{/link-to}}
   {{/each}}
 </div>
+{{/list-filter}}
 
 <div class="row">
   <button {{action incrementProperty "page"}}>MOAR!</button>
