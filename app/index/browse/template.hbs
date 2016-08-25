@@ -1,58 +1,32 @@
-  <section class="container">
-    <h2 class="page-title">B R O W S E</h2>
-    <nav>
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field">
+<h2 class="page-title">B R O W S E</h2>
+<nav>
+  <div class="nav-wrapper">
+    <form>
+      {{!-- <div class="input-field">
           <input class = "search-bar__field" id="search" type="search" required>
           <label for="search"><i class="material-icons search-bar__btn">search</i></label>
           <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
-  </nav>
-  <div class="row">
-    {{!-- {{#each model as |drink|}} --}}
+        </div> --}}
+      {{!-- {{#list-filter
+   filter=(action 'filterByDrink')
+   as |drinks|}}
+      {{/list-filter}} --}}
 
-    {{#link-to "index.recipe" class="drink-recipe-link"}}
-    <div class="drink-frame">
-      <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/screwdriver.png" alt="">
-      <p class= "drink-frame__name">Drink Name</p>
-    </div>
-    {{/link-to}}
-
-      <div class="drink-frame">
-        <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/martini.png" alt="">
-        <p class= "drink-frame__name">Drink Name</p>
-      </div>
-      <div class="drink-frame">
-        <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/margarita.png" alt="">
-        <p class= "drink-frame__name">Drink Name</p>
-      </div>
-      <div class="drink-frame">
-        <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/bloody-mary.png" alt="">
-        <p class= "drink-frame__name">Drink Name</p>
-      </div>
-      <div class="drink-frame">
-        <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/black-russian.png" alt="">
-        <p class= "drink-frame__name">Drink Name</p>
-      </div>
-      <div class="drink-frame">
-        <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/pina-colada.png" alt="">
-        <p class= "drink-frame__name">Drink Name</p>
-      </div>
-      <div class="drink-frame">
-        <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/mint-julep.png" alt="">
-        <p class= "drink-frame__name">Drink Name</p>
-      </div>
-      <div class="drink-frame">
-        <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/daiquiri.png" alt="">
-        <p class= "drink-frame__name">Drink Name</p>
-      </div>
-      <div class="drink-frame">
-        <img class = "drink-frame__picture" src="http://assets.absolutdrinks.com/drinks/300x400/tom-collins.png" alt="">
-        <p class= "drink-frame__name">Drink Name</p>
-      </div>
-      {{!-- {{/each}} --}}
+    </form>
   </div>
-  </section>
+</nav>
+
+<div class="row">
+  {{#each model as |drink|}}
+    {{#link-to "index.recipe" class="drink-recipe-link" }}
+      <div class="drink-frame">
+        <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
+        <p class="drink-frame__name">{{drink.name}}</p>
+      </div>
+    {{/link-to}}
+  {{/each}}
+</div>
+
+<div class="row">
+  <button {{action incrementProperty "page"}}>MOAR!</button>
+</div>
