@@ -8,13 +8,16 @@
 
 .side {
   &-pane {
+    @extend .z-depth-1;
+    position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: $primary-color;
     width: 15rem;
     flex-shrink: 0;
-    margin: $gutter;
+    padding: $gutter;
   }
 
   &-links {
