@@ -7,9 +7,20 @@ export default Ember.Controller.extend({
   actions: {
     filterByDrink(param) {
       if (param !== '') {
-        return this.get('store').query('drink', { name: param });
+        return this.get('store').query('drink', {
+          name: param,
+          page: {
+            number: this.page,
+            size: this.size,
+          },
+        });
       } else {
-        return this.get('store').findAll('drink');
+        return this.get('store').query('drink', {
+          page: {
+            number: this.page,
+            size: this.size,
+          },
+        });
       }
     },
   },
