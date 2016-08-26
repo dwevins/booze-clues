@@ -2,84 +2,30 @@
   <h2 class="featured-title"><span class="featured-title__spacing">FEATURED</span><span class="featured-title__spacing">DRINKS</span></h2>
   <div class="scroll-banner">
     {{#md-carousel fullWidth=true as |carousel|}}
-      <a class="carousel-item" href="#one!">
+      {{#each model as |drink|}}
+        <a class="carousel-item" href="#one!">
         <div class="scroll-banner__item">
           <div class="featured-text ">
 
 
-            <h3 class="featured-text__title">{{drink.name.margarita}}</h3>
+            <h3 class="featured-text__title">{{drink.name}}</h3>
 
             <ul class="featured-ingredients">
               <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
-              <li class="feauted-ingredients__item">
-                whiskey
-              </li>
-              <li class="feauted-ingredients__item">
-                ice
-              </li>
-              <li class="feauted-ingredients__item">
-                bitters
-              </li>
-              <li class="feauted-ingredients__item">
-                orange
-              </li>
+              {{#each drink.recipeIngredients as |recipeIngredient|}}
+                <li class="feauted-ingredients__item">
+                  {{recipeIngredient.addbMeasure}}
+                </li>
+              {{/each}}
             </ul>
           </div>
           <div class="featured-frame">
-            <img src="http://assets.absolutdrinks.com/drinks/300x400/old-fashioned.jpg" alt="" class="featured-frame__picture">
+            <img src="{{drink.photoUrl}}" alt="" class="featured-frame__picture">
           </div>
         </div>
       </a>
-      <a class="carousel-item" href="#two!">
-        <div class="scroll-banner__item">
-          <div class="featured-text ">
-            <h3 class="featured-text__title">Long Island Iced Tea</h3>
-            <ul class="featured-ingredients">
-              <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
-              <li class="feauted-ingredients__item">
-                whiskey
-              </li>
-              <li class="feauted-ingredients__item">
-                ice
-              </li>
-              <li class="feauted-ingredients__item">
-                bitters
-              </li>
-              <li class="feauted-ingredients__item">
-                orange
-              </li>
-            </ul>
-          </div>
-          <div class="featured-frame">
-            <img src="http://assets.absolutdrinks.com/drinks/300x400/white-russian.png" alt="" class="featured-frame__picture">
-          </div>
-        </div>
-      </a>
-      <a class="carousel-item" href="#three!">
-        <div class="scroll-banner__item">
-          <div class="featured-text ">
-            <h3 class="featured-text__title">Bloody Mary</h3>
-            <ul class="featured-ingredients">
-              <h4 class="featured-ingredients-title">Whatcha' Need:</h4>
-              <li class="feauted-ingredients__item">
-                whiskey
-              </li>
-              <li class="feauted-ingredients__item">
-                ice
-              </li>
-              <li class="feauted-ingredients__item">
-                bitters
-              </li>
-              <li class="feauted-ingredients__item">
-                orange
-              </li>
-            </ul>
-          </div>
-          <div class="featured-frame">
-            <img src="http://assets.absolutdrinks.com/drinks/300x400/bloody-mary.png" alt="" class="featured-frame__picture">
-          </div>
-        </div>
-      </a>
+      {{/each}}
+
       <div class="carousel-fixed-item">
         <button class="clicks carousel-clicks" {{action carousel.next}}><i class="fa fa-chevron-right" aria-hidden="true"></i>
 </button>

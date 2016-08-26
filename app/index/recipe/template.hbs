@@ -1,7 +1,13 @@
 <div class="recipe">
 <div class="recipe-top">
   <div class="recipe-top__left">
-  <h4 class="recipe-title">Recipe:(JS insert drink name)</h4>
+
+  {{#each model as |drink|}}
+  <h4 class="recipe-title">Recipe: {{drink.name.id}}</h4>
+  {{/each}}
+
+  {{log model}}
+
     <section class="ingredients">
       <h5 class="ingredients-title"> Ingredients:</h5>
       <ol class="ingredients-list">
