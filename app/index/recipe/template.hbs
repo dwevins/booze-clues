@@ -2,31 +2,26 @@
 <div class="recipe-top">
   <div class="recipe-top__left">
 
-  {{#each model as |drink|}}
-  <h4 class="recipe-title">Recipe: {{drink.name.id}}</h4>
-  {{/each}}
+
+  <h4 class="recipe-title">Recipe:{{model.name}}</h4>
 
   {{log model}}
 
     <section class="ingredients">
       <h5 class="ingredients-title"> Ingredients:</h5>
       <ol class="ingredients-list">
-        <li class="ingredients-list__item">
-          whiskey
-        </li>
-        <li class="ingredients-list__item">
-          bitters
-        </li>
-        <li class="ingredients-list__item">
-          tequila?
-        </li>
+        {{#each model.recipeIngredients as |recipeIngredient|}}
+          <li class="ingredients-list__item">
+            {{recipeIngredient.addbMeasure}}
+          </li>
+        {{/each}}
       </ol>
     </section>
     </div>
 
 <div class="recipe-top__right">
   <div class="recipe-frame">
-    <img class="recipe-frame__picture" src="https://placebear.com/200/200" alt="">
+    <img class="recipe-frame__picture" src="{{model.photoUrl}}" alt="">
   </div>
 </div>
 </div>
@@ -34,11 +29,7 @@
 <div class="recipe-bottom">
   <section class="recipe-instructions">
     <p class="recipe-instructions__text">
-      ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-       ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-       nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-       anim id est laborum.
+      {{model.recipe}}
     </p>
   </section>
 </div>
