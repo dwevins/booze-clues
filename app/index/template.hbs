@@ -11,41 +11,43 @@
   {{/unless}}
   <nav class="side-pane">
     <div class="container">
-      <div class="logo">
-        {{#link-to 'index'}}
-          <img src="http://www.fillmurray.com/g/200/100" alt="" class="logo-img">
-        {{/link-to}}
-      </div>
-      <div class="side-links">
-        <div class="side-links__link">
-          {{#link-to 'index.featured' class= "links"}}Featured{{/link-to}}
+      <div class="side-pane__content">
+        <div class="logo">
+          {{#link-to 'index'}}
+            <img src="http://www.fillmurray.com/g/200/100" alt="" class="logo-img">
+          {{/link-to}}
         </div>
-        <div class="side-links__link">
-          {{#link-to 'index.browse' class= "links"}}Browse{{/link-to}}
+        <div class="side-links">
+          <div class="side-links__link">
+            {{#link-to 'index.featured' class= "links"}}Featured{{/link-to}}
+          </div>
+          <div class="side-links__link">
+            {{#link-to 'index.browse' class= "links"}}Browse{{/link-to}}
+          </div>
+          <div class="side-links__link">
+            {{#link-to 'index.cabinet' class= "links"}}Cabinet{{/link-to}}
+          </div>
         </div>
-        <div class="side-links__link">
-          {{#link-to 'index.cabinet' class= "links"}}Cabinet{{/link-to}}
-        </div>
-      </div>
-      <div class="side__buttons">
-        <button class="side__buttons__clicks" {{action "toggleLoginModal"}}>Login</button>
-        <button class="side__buttons__clicks" {{action "toggleRegisterModal"}}>Register</button>
+        <div class="side__buttons">
+          <button class="side__buttons__clicks" {{action "toggleLoginModal"}}>Login</button>
+          <button class="side__buttons__clicks" {{action "toggleRegisterModal"}}>Register</button>
 
-      </div>
+        </div>
 
-      {{!-- <div class="site-info">
-        <p class="copyright">Designed by James Ridley and Woody Evins</p>
-        <p class="data-source">Data sourced from
-          <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
-        </p>
-        <p class="made-with">
-          Made using
-          <a href="http://emberjs.com/" class="ember-link">Ember</a>
-          and
-          <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
-        </p>
-        <p class="disclaimer">Please drink responsibly</p>
-      </div> --}}
+        {{!-- <div class="site-info">
+          <p class="copyright">Designed by James Ridley and Woody Evins</p>
+          <p class="data-source">Data sourced from
+            <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
+          </p>
+          <p class="made-with">
+            Made using
+            <a href="http://emberjs.com/" class="ember-link">Ember</a>
+            and
+            <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
+          </p>
+          <p class="disclaimer">Please drink responsibly</p>
+        </div> --}}
+      </div>
     </div>
 
   </nav>
