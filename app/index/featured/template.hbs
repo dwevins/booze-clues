@@ -3,6 +3,7 @@
   <div class="scroll-banner">
     {{#md-carousel fullWidth=true as |carousel|}}
       {{#each model as |drink|}}
+      {{#link-to "index.recipe" drink class="drink-recipe-link" }}
         <a class="carousel-item" href="#one!">
         <div class="scroll-banner__item">
           <div class="featured-text ">
@@ -24,6 +25,7 @@
           </div>
         </div>
       </a>
+      {{/link-to}}
       {{/each}}
 
       <div class="carousel-fixed-item">
