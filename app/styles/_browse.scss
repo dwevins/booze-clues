@@ -1,5 +1,7 @@
 .page-title {
   text-align: center;
+  letter-spacing: 1rem;
+  font-weight: 300;
 }
 
 .row {
@@ -25,5 +27,6 @@
   }
   &__name {
     text-align: center;
+    padding: 0 .5rem;
   }
 }

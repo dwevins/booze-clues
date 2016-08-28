@@ -10,21 +10,25 @@
   &__right {
     }
 }
-
 .recipe {
   &-title {
     margin: 0;
+    letter-spacing: 1rem;
+    font-weight: 300;
   }
 }
 
 .ingredients {
   font-size: 2rem;
+  font-weight: 300;
+  margin-top: 2*$gutter;
 
   &-list {
     margin: 0;
 
     &__item {
       font-size: 1rem;
+      list-style: none;
     }
   }
 }
