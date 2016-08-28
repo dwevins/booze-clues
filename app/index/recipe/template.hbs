@@ -3,19 +3,19 @@
   <div class="recipe-top__left">
 
 
-  <h4 class="recipe-title">Recipe:{{model.name}}</h4>
+  <h4 class="recipe-title">{{model.name}}</h4>
 
   {{log model}}
 
     <section class="ingredients">
       <h5 class="ingredients-title"> Ingredients:</h5>
-      <ol class="ingredients-list">
+      <ul class="ingredients-list">
         {{#each model.recipeIngredients as |recipeIngredient|}}
           <li class="ingredients-list__item">
-            {{recipeIngredient.addbMeasure}}
+            - {{recipeIngredient.addbMeasure}}
           </li>
         {{/each}}
-      </ol>
+      </ul>
     </section>
     </div>
 
