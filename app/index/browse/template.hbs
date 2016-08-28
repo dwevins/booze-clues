@@ -9,7 +9,8 @@
 
     <div class="row">
       {{#each filteredDrinks as |drink|}}
-        {{#link-to "index.recipe" class="drink-recipe-link" }}
+      {{log drink}}
+        {{#link-to "index.recipe" drink class="drink-recipe-link" }}
           <div class="drink-frame">
             <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
             <p class="drink-frame__name">{{drink.name}}</p>
