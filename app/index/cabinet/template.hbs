@@ -2,7 +2,27 @@
 <div class="row">
   {{!-- <div class="col s12">This div is 12-columns wide</div> --}}
 
-  <div class="card">
+  {{#list-filter filter=(action 'filterByIngredient') as |filteredDrinks|}}
+
+    <div class="row">
+      {{#each filteredDrinks as |ingredient|}}
+        {{#link-to "index.recipe" ingredient class="drink-recipe-link" }}
+
+        <div class="drink-frame">
+          <img class="drink-frame__picture" src="{{ingredient.photoUrl}}" alt="">
+          <p class="drink-frame__name">{{ingredient.name}}</p>
+
+          {{#each model.recipeIngredients as |recipeIngredient|}}
+            <li class="ingredients-list__item">
+              - {{recipeIngredient.addbMeasure}}
+            </li>
+          {{/each}}
+        </div>
+        {{/link-to}}
+      {{/each}}
+    </div>
+  {{/list-filter}}
+  {{!-- <div class="card">
     <form class="col s4">
       Liquors
       <p>
@@ -149,5 +169,5 @@
       <label for="test33">Sake</label>
     </p>
     </form>
-  </div>
+  </div> --}}
 </div>
