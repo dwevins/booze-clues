@@ -1,0 +1,46 @@
+@media screen and (max-width: 500px) {
+
+//index or nav-bar styling:
+.mobile-hide{
+  display: none;
+}
+.app{
+  flex-direction: column-reverse;
+}
+.side-pane {
+  background:$third-color;
+  width: 100%;
+  padding: 0;
+}
+.container {
+  display: flex;
+}
+.side-links {
+  display: flex;
+  flex-direction: row;
+
+&__link {
+  display: flex;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+}
+
+.mobile-view {
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  display: none;
+}
+
+//featured page styling:
+.featured-title {
+  font-size: 3rem;
+  &__spacing {
+      padding:0;
+    }
+}
+
+}

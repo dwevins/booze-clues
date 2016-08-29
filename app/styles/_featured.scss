@@ -17,6 +17,8 @@
   width: 100%;
   &__item {
     display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     flex-shrink: 0;
@@ -64,4 +66,7 @@
 }
 .carousel-fixed-item {
   text-align: right;
+}
+.drink-recipe-link {
+  overflow-y: scroll;
 }

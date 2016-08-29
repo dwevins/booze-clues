@@ -11,26 +11,39 @@
   {{/unless}}
   <nav class="side-pane">
     <div class="container">
-      <div class="logo">
+      <div class="logo mobile-hide">
         {{#link-to 'index'}}
           <img src="http://www.fillmurray.com/g/200/100" alt="" class="logo-img">
         {{/link-to}}
       </div>
       <div class="side-links">
         <div class="side-links__link">
-          {{#link-to 'index.featured' class= "links"}}Featured{{/link-to}}
+          {{#link-to 'index.featured' class= "links mobile-hide"}}Featured{{/link-to}}
+          {{#link-to 'index.featured' class= "links mobile-view"}} <i class="fa fa-home" aria-hidden="true"></i> {{/link-to}}
         </div>
         <div class="side-links__link">
-          {{#link-to 'index.browse' class= "links"}}Browse{{/link-to}}
+          {{#link-to 'index.browse' class= "links mobile-hide"}}Browse{{/link-to}}
+          {{#link-to 'index.browse' class= "links mobile-view"}}<i class="fa fa-search" aria-hidden="true"></i>{{/link-to}}
+        </div>
+        <div class="logo mobile-view">
+          {{#link-to 'index'}}
+            <img src="http://www.fillmurray.com/g/200/100" alt="" class="logo-img">
+          {{/link-to}}
         </div>
         <div class="side-links__link">
-          {{#link-to 'index.cabinet' class= "links"}}Cabinet{{/link-to}}
+          {{#link-to 'index.cabinet' class= "links mobile-hide"}}Cabinet{{/link-to}}
+          {{#link-to 'index.cabinet' class= "links mobile-view"}}<i class="fa fa-glass" aria-hidden="true"></i>{{/link-to}}
+        </div>
+        <div class="side-links__link mobile-view">
+          <button class="side__buttons__clicks mobile-view" {{action "toggleLoginModal"}}><i class="fa fa-user" aria-hidden="true"></i></button>
+        </div>
+        <div class="side-links__link mobile-view">
+          <button class="side__buttons__clicks mobile-view" {{action "toggleRegisterModal"}}><i class="fa fa-user-plus" aria-hidden="true"></i></button>
         </div>
       </div>
       <div class="side__buttons">
-        <button class="side__buttons__clicks" {{action "toggleLoginModal"}}>Login</button>
-        <button class="side__buttons__clicks" {{action "toggleRegisterModal"}}>Register</button>
-
+        <button class="side__buttons__clicks mobile-hide" {{action "toggleLoginModal"}}>Login</button>
+        <button class="side__buttons__clicks mobile-hide" {{action "toggleRegisterModal"}}>Register</button>
       </div>
 
       {{!-- <div class="site-info">

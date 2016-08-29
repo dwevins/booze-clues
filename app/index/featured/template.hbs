@@ -3,10 +3,13 @@
   <div class="scroll-banner">
     {{#md-carousel fullWidth=true as |carousel|}}
       {{#each model as |drink|}}
-      {{#link-to "index.recipe" drink class="drink-recipe-link" }}
-        <a class="carousel-item" href="#one!">
+      {{#link-to "index.recipe" drink class="drink-recipe-link carousel-item"}}
+
         <div class="scroll-banner__item">
-          <div class="featured-text ">
+          <div class="featured-frame">
+            <img src="{{drink.photoUrl}}" alt="" class="featured-frame__picture">
+          </div>
+          <div class="featured-text">
             <h3 class="featured-text__title">{{drink.name}}</h3>
 
             <ul class="featured-ingredients">
@@ -18,11 +21,8 @@
               {{/each}}
             </ul>
           </div>
-          <div class="featured-frame">
-            <img src="{{drink.photoUrl}}" alt="" class="featured-frame__picture">
-          </div>
         </div>
-      </a>
+
       {{/link-to}}
       {{/each}}
 
