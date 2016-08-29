@@ -1,6 +1,6 @@
 <h2 class="page-title">BROWSE</h2>
 
-  {{#list-filter filter=(action 'filterByDrink') as |filteredDrinks|}}
+  {{#list-filter page=page query=query filter=(action 'filterByDrink') as |filteredDrinks|}}
 
     <div class="row">
       {{#each filteredDrinks as |drink|}}
