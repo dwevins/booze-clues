@@ -8,9 +8,9 @@
   flex-direction: column-reverse;
 }
 .side-pane {
-  background:$third-color;
+  // background:$third-color;
   width: 100%;
-  padding: 0;
+  padding: .5rem;
 }
 .container {
   display: flex;
@@ -21,19 +21,34 @@
 
 &__link {
   display: flex;
+  justify-content: center;
   align-items: center;
   padding-top: 0;
   padding-bottom: 0;
 }
 }
+.side-links__link:hover {
+  border: none;
+}
 
 .mobile-view {
+  // display: flex;
+  // justify-content: center;
+  margin: 0;
+  // padding: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .logo {
   display: none;
 }
+.links {
+  margin: 0;
+}
+
 
 //featured page styling:
 .featured-title {
