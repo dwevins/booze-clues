@@ -1,15 +1,9 @@
-<h2 class="page-title">BROWSE</h2>{{!-- <nav>
-  <div class="nav-wrapper">
-
-  </div>
-</nav> --}}
-{{!-- {{#simple-form onsubmit=(action 'filterByDrink') as |filteredDrinks|}} --}}
+<h2 class="page-title">BROWSE</h2>
 
   {{#list-filter filter=(action 'filterByDrink') as |filteredDrinks|}}
 
     <div class="row">
       {{#each filteredDrinks as |drink|}}
-      {{log drink}}
         {{#link-to "index.recipe" drink class="drink-recipe-link" }}
           <div class="drink-frame">
             <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
@@ -19,7 +13,7 @@
       {{/each}}
     </div>
   {{/list-filter}}
-  {{!-- {{/simple-form}  --}}
   <div class="row">
-  <button class = "clicks"{{action incrementProperty "page"}}>More Drinks</button>
+  {{!-- <button class = "clicks"{{action incrementProperty "page"}}>More Drinks</button> --}}
+  <button class = "clicks"{{action 'getNextPage'}}>More Drinks</button>
   </div>

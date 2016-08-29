@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Controller.extend({
   queryParams: ['page', 'size'],
   page: 1,
-  size: 50,
+  size: 10,
   actions: {
     filterByDrink(param) {
       if (param !== '') {
@@ -21,6 +21,11 @@ export default Ember.Controller.extend({
           },
         });
       }
+    },
+
+    getNextPage() {
+      this.incrementProperty("page");
+
     },
   },
 });
