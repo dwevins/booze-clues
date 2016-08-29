@@ -48,7 +48,7 @@ module.exports = function(environment) {
 
 
   if (environment === 'production') {
-
+    ENV.DS.host = 'https://booze-clues.herokuapp.com'
   }
 
   return ENV;
