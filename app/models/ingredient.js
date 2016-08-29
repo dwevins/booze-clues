@@ -2,5 +2,5 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
   name: DS.attr('string'),
-  recipeIngreidents: DS.hasMany('recipe-ingreident')
+  recipeIngreidents: DS.hasMany('recipe-ingreident'),
 });
