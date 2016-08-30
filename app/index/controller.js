@@ -51,7 +51,7 @@ export default Ember.Controller.extend({
     registerUser(formValues) {
       const newUser = this.store.createRecord('user', formValues);
       newUser.save().then(() => {
-        this.get('flashMessages').success('Bill Murray accepts your application.');
+        this.get('flashMessages').success('Booze Clues accepts your application.');
         this.transitionToRoute('/browse');
       })
       .catch(() => {
@@ -74,5 +74,12 @@ export default Ember.Controller.extend({
           this.get('flashMessages').warning('Username/Password incorrect.');
         });
     },
+    logOut() {
+     this.get('session').invalidate()
+     .then(() => {
+       this.get('flashMessages').success('User logged out.');
+       this.transitionToRoute('/index');
+     })
+   },
   },
 });
