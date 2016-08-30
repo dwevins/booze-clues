@@ -1,6 +1,6 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  user: DS.attr('number'),
-  drink: DS.attr('number'),
+  user: DS.belongsTo('user'),
+  drink: DS.belongsTo('drink'),
 });
