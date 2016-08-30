@@ -65,7 +65,8 @@
   }
 }
 .carousel-fixed-item {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 .drink-recipe-link {
   overflow-y: scroll;

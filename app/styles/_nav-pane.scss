@@ -77,6 +77,9 @@
   background: $primary-color;
   border-top: 1px solid $primary-color;
   border-bottom: 1px solid $primary-color;
+  color: $secondary-color;
+  display: flex;
+  align-items: center;
 }
 .register-buttons {
   display: flex;
