@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import { task, timeout } from 'ember-concurrency';
 
 export default Ember.Controller.extend({
   init() {
@@ -7,17 +8,25 @@ export default Ember.Controller.extend({
     this.set('cabinet', []);
   },
 
+  search: task(function *(name) {
+    if (name) {
+      yield timeout(200);
+    }
+
+    return this.get('store').query('ingredient', {
+      name,
+      page: {
+        size: this.size,
+      },
+    });
+  }).restartable(),
+
   actions: {
     filterByIngredient(param) {
       this.set('query', param);
 
       if (param !== '') {
-        return this.get('store').query('ingredient', {
-          name: param,
-          page: {
-            size: this.size,
-          },
-        });
+        return this.get('search').perform(param);
       } else {
         return this.get('store').query('ingredient', {
           page: {

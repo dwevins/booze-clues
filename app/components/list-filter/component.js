@@ -10,7 +10,9 @@ export default Ember.Component.extend({
     this._super(...arguments);
 
     // Gets data when the component first is created with an empty search
-    this.get('filter')(this.query, this.get('page')).then((drinks) => this.set('drinks', drinks));
+    this.get('filter')(this.query, this.get('page')).then((drinks) => this.setProperties({
+      drinks, loading: false,
+    }));
 
     this.set('value', this.query);
   },
@@ -20,7 +22,12 @@ export default Ember.Component.extend({
       let filterInputValue = this.get('value');
       let filterAction = this.get('filter');
       let page = this.get('page');
-      filterAction(filterInputValue, page).then((filterResults) => this.set('drinks', filterResults));
+      this.set('loading', true);
+      console.log('loading')
+
+      filterAction(filterInputValue, page).then((drinks) => this.setProperties({
+        drinks, loading: false,
+      }));
     },
   },
 
