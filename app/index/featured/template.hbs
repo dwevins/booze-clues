@@ -27,9 +27,9 @@
       {{/each}}
 
       <div class="carousel-fixed-item">
-        <button class="clicks carousel-clicks" {{action carousel.next}}><i class="fa fa-chevron-right" aria-hidden="true"></i>
-</button>
-      </div>
+        <button class="clicks carousel-clicks" {{action carousel.prev}}><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="clicks carousel-clicks" {{action carousel.next}}><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+</div>
     {{/md-carousel}}
   </div>
 </div>

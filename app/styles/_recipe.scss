@@ -1,6 +1,6 @@
 .recipe-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   padding: $gutter;
 
@@ -11,17 +11,20 @@
     }
 }
 .recipe {
+  text-align: center;
   &-title {
     margin: 0;
-    letter-spacing: 1rem;
-    font-weight: 300;
+    font-weight: 400;
   }
 }
 
 .ingredients {
   font-size: 2rem;
-  font-weight: 300;
   margin-top: 2*$gutter;
+  padding-left: 4rem;
+  &-title{
+    font-weight: 400;
+  }
 
   &-list {
     margin: 0;
@@ -32,7 +35,9 @@
     }
   }
 }
-
+.recipe-box {
+  display: flex;
+}
 .recipe-frame {
   width: 15rem;
   padding: 0;
@@ -50,5 +55,6 @@
 .recipe-instructions {
   &__text {
     font-size: 1.5rem;
+    font-weight: 300;
   }
 }

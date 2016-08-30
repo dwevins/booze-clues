@@ -93,6 +93,14 @@
 .site-info {
   text-align: center;
 }
+.flex-box {
+  display: flex;
+  justify-content: space-between;
+}
+.no-account {
+  display: flex;
+  align-items: center;
+}
 .mobile-view {
   display: none;
 }

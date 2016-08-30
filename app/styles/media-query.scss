@@ -23,8 +23,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
 }
 }
 .side-links__link:hover {
@@ -39,8 +39,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0;
-  padding-bottom: 0;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
 }
 .logo {
   display: none;
@@ -48,7 +48,6 @@
 .links {
   margin: 0;
 }
-
 
 //featured page styling:
 .featured-title {
