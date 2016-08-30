@@ -1,27 +1,28 @@
-  <h2 class="page-title">CABINET</h2>
+<h2 class="page-title">CABINET</h2>
 <div class="row">
   {{!-- <div class="col s12">This div is 12-columns wide</div> --}}
 
-  {{#list-filter filter=(action 'filterByIngredient') as |filteredDrinks|}}
+  {{#list-filter query=query filter=(action 'filterByIngredient') as |filteredDrinks|}}
 
     <div class="row">
       {{#each filteredDrinks as |ingredient|}}
-        {{#link-to "index.recipe" ingredient class="drink-recipe-link" }}
 
-        <div class="drink-frame">
-          <img class="drink-frame__picture" src="{{ingredient.photoUrl}}" alt="">
-          <p class="drink-frame__name">{{ingredient.name}}</p>
-
-          {{#each model.recipeIngredients as |recipeIngredient|}}
-            <li class="ingredients-list__item">
-              - {{recipeIngredient.addbMeasure}}
-            </li>
-          {{/each}}
+          <div class="drink-frame">
+            <p class="drink-frame__name">{{ingredient.name}}</p>
+            <button {{action "addIngredient" ingredient}}>Add to Cabinet</button>
         </div>
-        {{/link-to}}
+
       {{/each}}
     </div>
   {{/list-filter}}
+
+  <div class="results-list">
+    <ul>
+      {{#each cabinet as |ingredient|}}
+        <li>{{ingredient.name}}</li>
+      {{/each}}
+    </ul>
+  </div>
   {{!-- <div class="card">
     <form class="col s4">
       Liquors

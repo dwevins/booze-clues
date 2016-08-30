@@ -1,6 +1,7 @@
 .logo {
   margin: $gutter auto;
   width: 10rem;
+  flex-shrink: 0;
   &-img {
     width: 100%;
   }
@@ -82,4 +83,7 @@
 
 .site-info {
   text-align: center;
+}
+.mobile-view {
+  display: none;
 }
