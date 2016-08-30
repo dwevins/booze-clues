@@ -5,8 +5,6 @@
 
   <h4 class="recipe-title">{{model.name}}</h4>
 
-  {{log model.id}}
-
     <div class="recipe-box">
       <section class="ingredients">
         <h5 class="ingredients-title"> Ingredients:</h5>
@@ -38,6 +36,7 @@
     </p>
   </section>
 </div>
-
-<button class = "clicks"{{action 'saveFave'}}>addFavorite</button>
+{{#if session.isAuthenticated}}
+  <button class = "clicks"{{action 'saveFave'}}>addFavorite</button>
+{{/if}}
 </div>
