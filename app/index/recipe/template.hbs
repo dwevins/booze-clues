@@ -7,23 +7,28 @@
 
   {{log model.id}}
 
-    <section class="ingredients">
-      <h5 class="ingredients-title"> Ingredients:</h5>
-      <ul class="ingredients-list">
-        {{#each model.recipeIngredients as |recipeIngredient|}}
-          <li class="ingredients-list__item">
-            - {{recipeIngredient.addbMeasure}}
-          </li>
-        {{/each}}
-      </ul>
-    </section>
+    <div class="recipe-box">
+      <section class="ingredients">
+        <h5 class="ingredients-title"> Ingredients:</h5>
+        <ul class="ingredients-list">
+          {{#each model.recipeIngredients as |recipeIngredient|}}
+            <li class="ingredients-list__item">
+              - {{recipeIngredient.addbMeasure}}
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+      <div class="recipe-frame">
+        <img class="recipe-frame__picture" src="{{model.photoUrl}}" alt="">
+      </div>
+    </div>
     </div>
 
-<div class="recipe-top__right">
+{{!-- <div class="recipe-top__right">
   <div class="recipe-frame">
     <img class="recipe-frame__picture" src="{{model.photoUrl}}" alt="">
   </div>
-</div>
+</div> --}}
 </div>
 
 <div class="recipe-bottom">
