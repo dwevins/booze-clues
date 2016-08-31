@@ -48,6 +48,13 @@
 .links {
   margin: 0;
 }
+.icon {
+  padding-top: .5rem;
+  width: 2.5rem;
+  &-image{
+    width: 100%;
+  }
+}
 
 //featured page styling:
 .featured-title {
