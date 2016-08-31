@@ -16,5 +16,11 @@ export default Ember.Controller.extend({
         this.get('flashMessages').warning('duh, already know that.');
       })
     },
+
+    removeFave(favoritesPromise) {
+      favoritesPromise.then((favorites) => {
+        favorites.get('firstObject').destroyRecord();
+      })
+    },
   },
 });
