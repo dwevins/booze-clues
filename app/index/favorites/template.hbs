@@ -1,10 +1,10 @@
 <h2 class="page-title">FAVORITES</h2>
     <div class="row">
-      {{#each filteredDrinks as |drink|}}
-        {{#link-to "index.recipe" drink class="drink-recipe-link" }}
+      {{#each model as |favorite|}}
+        {{#link-to "index.recipe" favorite.drink class="drink-recipe-link" }}
           <div class="drink-frame">
-            <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
-            <p class="drink-frame__name">{{drink.name}}</p>
+            <img class="drink-frame__picture" src="{{favorite.drink.photoUrl}}" alt="">
+            <p class="drink-frame__name">{{favorite.drink.name}}</p>
           </div>
         {{/link-to}}
       {{/each}}

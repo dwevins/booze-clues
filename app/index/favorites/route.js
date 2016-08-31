@@ -1,7 +1,6 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-
   queryParams: {
     page: {
       refreshModel: true,
@@ -9,5 +8,9 @@ export default Ember.Route.extend({
     size: {
       refreshModel: true,
     },
+  },
+
+  model() {
+    return this.store.findAll('favorite');
   },
 });
