@@ -23,10 +23,13 @@
   {{/list-filter}}
 
   <div class="results-list">
+
     <ul>
       {{#each cabinet as |ingredient|}}
         <li>{{ingredient.name}}</li>
       {{/each}}
+      <button class="you-can-do-it" {{action "findByIngredient"}}> find the drinks</button>
     </ul>
+
   </div>
 </div>

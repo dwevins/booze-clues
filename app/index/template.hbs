@@ -13,7 +13,7 @@
     <div class="container">
       <div class="logo mobile-hide">
         {{#link-to 'index'}}
-          <img src="http://www.fillmurray.com/g/200/100" alt="" class="logo-img">
+          <img src="assets/logo2.png" alt="" class="logo-img">
         {{/link-to}}
       </div>
       <div class="side-links">
@@ -28,7 +28,11 @@
 
         <div class="side-links__link">
           {{#link-to 'index.cabinet' class="links mobile-hide" }}Cabinet{{/link-to}}
-          {{#link-to 'index.cabinet' class="links mobile-view side__buttons__clicks" }}<i class="fa fa-glass" aria-hidden="true"></i>{{/link-to}}
+          {{#link-to 'index.cabinet' class="links mobile-view side__buttons__clicks" }}
+            <div class="icon">
+              <img src="assets/binoculars.png" alt="" class="icon-image" />
+            </div>
+          {{/link-to}}
         </div>
         <div class="side-links__link mobile-view">
           <button class="side__buttons__clicks mobile-view" {{action "toggleLoginModal"}}><i class="fa fa-user" aria-hidden="true"></i></button>

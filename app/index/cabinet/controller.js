@@ -39,6 +39,9 @@ export default Ember.Controller.extend({
     addIngredient(ingredient) {
       this.set('cabinet', [...this.cabinet, ingredient]);
     },
+    findByIngredient(drink) {
+      console.log('cabinet');
+    },
   },
 
 });
