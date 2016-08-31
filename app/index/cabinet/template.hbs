@@ -1,8 +1,8 @@
 <h2 class="page-title">CABINET</h2>
-<div class="row">
-  {{!-- <div class="col s12">This div is 12-columns wide</div> --}}
+{{#list-filter query=query filter=(action 'filterByIngredient') as |filteredDrinks loading|}}
+  <div class="row">
+    {{!-- <div class="col s12">This div is 12-columns wide</div> --}}
 
-  {{#list-filter query=query filter=(action 'filterByIngredient') as |filteredDrinks loading|}}
 
     <div class="row {{if loading "row--loading"}}">
       {{#if loading}}
@@ -12,30 +12,37 @@
       {{/if}}
       {{#each filteredDrinks as |ingredient|}}
         <div class="drink-frame">
-          <button class= "clicks" {{action "addIngredient" ingredient}}>{{ingredient.name}}</button>
+          <button class="clicks" {{action "addIngredient" ingredient}}>{{ingredient.name}}</button>
         </div>
-      {{else}}
-        <p class="drink-frame">
-          Please Search Again...
-        </p>
+        {{else}}
+          <p class="drink-frame">
+            Please Search Again...
+          </p>
       {{/each}}
     </div>
-  {{/list-filter}}
 
-  <div class="results-list">
+    <div class="results-list">
 
-    <ul>
-      {{#each cabinet as |ingredient|}}
-        <li>{{ingredient.name}}</li>
-      {{/each}}
-      <button class="find-the-drinks" {{action "findByIngredient"}}>Find the Drinks</button>
-    </ul>
-
-    <ul>
-      {{#each results as |drink|}}
-        <li>{{drink.name}}</li>
-      {{/each}}
-    </ul>
-
+    </div>
   </div>
+
+
+{{/list-filter}}
+<div class="results-row">
+<ul>
+  {{#each cabinet as |ingredient|}}
+  <li>{{ingredient.name}}</li>
+  {{/each}}
+  <button class="find-the-drinks" {{action "findByIngredient"}}>Find the Drinks</button>
+</ul>
+<ul>
+  {{#each results as |drink|}}
+  {{#link-to "index.recipe" drink class="drink-recipe-link" }}
+    <div class="drink-frame">
+      <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
+      <p class="drink-frame__name">{{drink.name}}</p>
+    </div>
+  {{/link-to}}
+  {{/each}}
+</ul>
 </div>
