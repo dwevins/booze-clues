@@ -28,7 +28,13 @@
       {{#each cabinet as |ingredient|}}
         <li>{{ingredient.name}}</li>
       {{/each}}
-      <button class="you-can-do-it" {{action "findByIngredient"}}> find the drinks</button>
+      <button class="find-the-drinks" {{action "findByIngredient"}}>Find the Drinks</button>
+    </ul>
+
+    <ul>
+      {{#each results as |drink|}}
+        <li>{{drink.name}}</li>
+      {{/each}}
     </ul>
 
   </div>

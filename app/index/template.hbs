@@ -13,7 +13,7 @@
     <div class="container">
       <div class="logo mobile-hide">
         {{#link-to 'index'}}
-          <img src="assets/logo2.png" alt="" class="logo-img">
+          <img src="assets/logo1.png" alt="" class="logo-img">
         {{/link-to}}
       </div>
       <div class="side-links">
@@ -29,9 +29,10 @@
         <div class="side-links__link">
           {{#link-to 'index.cabinet' class="links mobile-hide" }}Cabinet{{/link-to}}
           {{#link-to 'index.cabinet' class="links mobile-view side__buttons__clicks" }}
-            <div class="icon">
+          <i class="fa fa-glass" aria-hidden="true"></i>
+            {{!-- <div class="icon">
               <img src="assets/binoculars.png" alt="" class="icon-image" />
-            </div>
+            </div> --}}
           {{/link-to}}
         </div>
         <div class="side-links__link mobile-view">
@@ -70,9 +71,16 @@
   <div class="flash-messages">
     {{#each flashMessages.queue as |flash|}}
       {{#flash-message flash=flash class="success-message" as |message|}}
-        <p>
-          {{flash.message}}
-        </p>
+        {{#if flash.message.icon}}
+          <p>
+            {{fa-icon flash.message.icon size="fw"}} {{flash.message.message}}
+          </p>
+        {{else}}
+
+          <p>
+            {{flash.message}}
+          </p>
+        {{/if}}
       {{/flash-message}}
     {{/each}}
   </div>
