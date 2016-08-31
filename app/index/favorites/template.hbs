@@ -1,0 +1,14 @@
+<h2 class="page-title">FAVORITES</h2>
+    <div class="row">
+      {{#each model as |favorite|}}
+        {{#link-to "index.recipe" favorite.drink class="drink-recipe-link" }}
+          <div class="drink-frame">
+            <img class="drink-frame__picture" src="{{favorite.drink.photoUrl}}" alt="">
+            <p class="drink-frame__name">{{favorite.drink.name}}</p>
+          </div>
+        {{/link-to}}
+      {{/each}}
+    </div>
+  <div class="row">
+  <button class = "clicks"{{action 'getNextPage'}}>More Drinks</button>
+  </div>
