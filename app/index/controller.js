@@ -78,7 +78,7 @@ export default Ember.Controller.extend({
      this.get('session').invalidate()
      .then(() => {
        this.get('flashMessages').success('User logged out.');
-       this.transitionToRoute('/index');
+       this.transitionToRoute('/');
      })
    },
   },
