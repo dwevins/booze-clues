@@ -12,7 +12,7 @@
       {{/if}}
       <div class="ingredient-frame">
       {{#each filteredDrinks as |ingredient|}}
-          <button class="clicks" {{action "addIngredient" ingredient}}>{{ingredient.name}}</button>
+          <button class="clicks-1" {{action "addIngredient" ingredient}}>{{ingredient.name}}</button>
       {{else}}
           <p class="ingredient-frame">
             Please Search Again...
@@ -24,13 +24,15 @@
 {{/list-filter}}
 
 <div class="row">
-  {{!-- <ul> --}}
+
     {{#each cabinet as |ingredient|}}
-      <p>{{ingredient.name}}</p>
+      <p class= "card">{{ingredient.name}}</p>
     {{/each}}
-  {{!-- </ul> --}}
+
 </div>
-  <button class="clicks bold" {{action "findByIngredient"}}>Find the Drinks</button>
+<div class="row">
+  <button class="clicks bold" {{action "findByIngredient"}}> Whatcha' Making? </button>
+</div>
   <div class="row">
     {{#each results as |drink|}}
       {{#link-to "index.recipe" drink class="drink-recipe-link" }}

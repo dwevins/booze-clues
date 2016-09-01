@@ -8,3 +8,19 @@
   display: flex;
   justify-content: center;
 }
+.clicks-1{
+  font-weight: 450;
+  border: none;
+  background: $primary-color;
+  border-top: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  color: $secondary-color;
+  display: flex;
+  align-items: center;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.clicks-1:hover {
+  border-top: 1px solid $secondary-color;
+  border-bottom: 1px solid $secondary-color;
+}
