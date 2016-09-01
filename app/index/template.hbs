@@ -37,6 +37,14 @@
           </div>
           {{/link-to}}
         </div>
+{{#if session.isAuthenticated}}
+        <div class="side-links__link">
+          {{#link-to 'index.favorites' class="links mobile-hide" }}Favorites{{/link-to}}
+          {{#link-to 'index.favorites' class="links mobile-view side__buttons__clicks" }}
+          <i class="fa fa-star" aria-hidden="true"></i>
+          {{/link-to}}
+        </div>
+{{/if}}
         <div class="side-links__link mobile-view">
           <button class="side__buttons__clicks mobile-view" {{action "toggleLoginModal"}}><i class="fa fa-user" aria-hidden="true"></i></button>
         </div>
