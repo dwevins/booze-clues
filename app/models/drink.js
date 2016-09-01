@@ -5,4 +5,5 @@ export default DS.Model.extend({
   recipe: DS.attr('string'),
   photoUrl: DS.attr('string'),
   recipeIngredients: DS.hasMany('recipe-ingredient'),
+  favorites: DS.hasMany('favorite'),
 });

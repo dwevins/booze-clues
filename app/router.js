@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('featured', {path:'/'});
     this.route('recipe', {path:'/recipe/:drink_id'});
     this.route('browse');
+    this.route('favorites');
   })
 });
 

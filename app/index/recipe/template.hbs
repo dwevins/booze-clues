@@ -38,6 +38,10 @@
 </div>
 
 {{#if session.isAuthenticated}}
-  <button class = "clicks"{{action 'saveFave'}}>addFavorite</button>
+  {{#if model.favorites}}
+    <button class = "clicks"{{action 'removeFave' model.favorites}}>remove favorite</button>
+  {{else}}
+    <button class = "clicks"{{action 'saveFave'}}>Add Favorite</button>
+  {{/if}}
 {{/if}}
 </div>
