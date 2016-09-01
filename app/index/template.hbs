@@ -129,7 +129,7 @@
         <h3 class="login-register">Login</h3>
         <a class="no-account" {{action "toggleLoginModal"}}>Need to Register?</a>
       </div>
-      {{#simple-form onsubmit=(action 'login') as |loginValues|}}
+      {{#simple-form onsubmit=(action 'loginUser') as |loginValues|}}
         {{input value=loginValues.email placeholder='Email' id="email" type="email" class="validate"}} {{input type='password' value=loginValues.password placeholder='Password'}}
         <div class="register-buttons">
           <a class="clicks bold" {{action "toggleLoginModal"}}>Cancel</a>
