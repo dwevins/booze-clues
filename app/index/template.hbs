@@ -95,17 +95,17 @@
 <div class="display-pane">
   {{outlet}}
   <div class="site-info">
-      <p class="copyright">Designed by James Ridley and Woody Evins</p>
-      <p class="data-source">Data sourced from
+      <p class="copyright site-info__item">Designed by James Ridley and Woody Evins</p>
+      <p class="data-source site-info__item">Data sourced from
         <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
       </p>
-      <p class="made-with">
+      <p class="made-with site-info__item">
         Made using
         <a href="http://emberjs.com/" class="ember-link">Ember</a>
         and
         <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
       </p>
-      <p class="disclaimer">Please drink responsibly</p>
+      <p class="disclaimer site-info__item">Please drink responsibly</p>
     </div>
   {{#if isRegisterModalVisible}}
     {{#modal-dialog translucentOverlay=true}}
