@@ -1,18 +1,19 @@
 <h2 class="page-title">BROWSE</h2>
 
-  {{#list-filter page=page query=query filter=(action 'filterByDrink') as |filteredDrinks|}}
+{{#list-filter page=page query=query filter=(action 'filterByDrink') as |filteredDrinks|}}
 
-    <div class="row">
-      {{#each filteredDrinks as |drink|}}
-        {{#link-to "index.recipe" drink class="drink-recipe-link" }}
-          <div class="drink-frame">
-            <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
-            <p class="drink-frame__name">{{drink.name}}</p>
-          </div>
-        {{/link-to}}
-      {{/each}}
-    </div>
-  {{/list-filter}}
   <div class="row">
-  <button class = "clicks"{{action 'getNextPage'}}>More Drinks</button>
+    {{#each filteredDrinks as |drink|}}
+      {{#link-to "index.recipe" drink class="drink-recipe-link" }}
+        <div class="drink-frame">
+          <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
+          <p class="drink-frame__name">{{drink.name}}</p>
+        </div>
+      {{/link-to}}
+    {{/each}}
   </div>
+{{/list-filter}}
+<div class="space-between">
+  <button class="clicks bold" {{action 'getLastPage'}}> <i class="fa fa-chevron-left" aria-hidden="true"></i> </button>
+  <button class="clicks bold" {{action 'getNextPage'}}> <i class="fa fa-chevron-right" aria-hidden="true"></i> </button>
+</div>

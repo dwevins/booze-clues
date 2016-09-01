@@ -41,5 +41,8 @@ export default Ember.Controller.extend({
     getNextPage() {
       this.incrementProperty('page');
     },
+    getLastPage() {
+      this.decrementProperty('page');
+    },
   },
 });

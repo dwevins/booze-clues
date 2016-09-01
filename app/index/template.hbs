@@ -97,8 +97,8 @@
         {{#simple-form onsubmit=(action 'registerUser') as |registerValues|}}
           {{input value=registerValues.username placeholder='Username'}} {{input value=registerValues.email placeholder='Email' id="email" type="email" class="validate"}} {{input type='password' value=registerValues.password placeholder='Password'}}
           <div class="register-buttons">
-            <a class="clicks" {{action "toggleRegisterModal"}}>Cancel</a>
-            <button type="submit" class="clicks">Register</button>
+            <a class="clicks bold" {{action "toggleRegisterModal"}}>Cancel</a>
+            <button class="clicks bold" type="submit">Register</button>
           </div>
         {{/simple-form}}
 
@@ -113,8 +113,8 @@
         {{#simple-form onsubmit=(action 'login') as |loginValues|}}
           {{input value=loginValues.email placeholder='Email' id="email" type="email" class="validate"}} {{input type='password' value=loginValues.password placeholder='Password'}}
           <div class="register-buttons">
-            <a class="clicks" {{action "toggleLoginModal"}}>Cancel</a>
-            <button type="submit" class="clicks">Login</button>
+            <a class="clicks bold" {{action "toggleLoginModal"}}>Cancel</a>
+            <button class="clicks bold" type="submit">Login</button>
           </div>
         {{/simple-form}}
       {{/modal-dialog}}

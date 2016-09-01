@@ -1,5 +1,8 @@
 import Ember from 'ember';
-import { task, timeout } from 'ember-concurrency';
+import {
+  task,
+  timeout,
+} from 'ember-concurrency';
 
 export default Ember.Controller.extend({
   flashMessages: Ember.inject.service(),
@@ -10,7 +13,7 @@ export default Ember.Controller.extend({
     this.set('cabinet', []);
   },
 
-  search: task(function *(name) {
+  search: task(function*(name) {
     if (name) {
       yield timeout(200);
     }
