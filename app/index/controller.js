@@ -7,8 +7,8 @@ export default Ember.Controller.extend({
   userIsOfAge: false,
 
   cookies: Ember.inject.service(),
-  flashMessages: Ember.inject.service(),
-  session: Ember.inject.service(),
+    flashMessages: Ember.inject.service(),
+    session: Ember.inject.service(),
 
   queryParams: {
     isRegisterModalVisible: 'register',
@@ -41,11 +41,11 @@ export default Ember.Controller.extend({
       this.toggleProperty('isRegisterModalVisible');
     },
 
-    register: function(registerValues) {
+    register: function() {
       this.toggleProperty('isRegisterModalVisible');
     },
 
-    login: function(loginValues) {
+    login: function() {
       this.toggleProperty('isLoginModalVisible');
     },
     registerUser(formValues) {
@@ -59,7 +59,7 @@ export default Ember.Controller.extend({
       });
     },
 
-    login(formValues) {
+    loginUser(formValues) {
       const authenticator = 'authenticator:application';
 
       this.get('session').authenticate(authenticator, {
