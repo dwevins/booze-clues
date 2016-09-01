@@ -39,9 +39,9 @@
 
 {{#if session.isAuthenticated}}
   {{#if model.favorites}}
-    <button class = "clicks"{{action 'removeFave' model.favorites}}>remove favorite</button>
+    <button class = "clicks bold"{{action 'removeFave' model.favorites}}>Remove Favorite</button>
   {{else}}
-    <button class = "clicks"{{action 'saveFave'}}>Add Favorite</button>
+    <button class = "clicks bold"{{action 'saveFave'}}>Add Favorite</button>
   {{/if}}
 {{/if}}
 </div>
