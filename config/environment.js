@@ -41,15 +41,14 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
+  if (environment === 'production') {
+    ENV.DS.host = 'https://booze-clues.herokuapp.com'
+  }
+
   ENV['ember-simple-auth-token'] = {
     serverTokenEndpoint: `${ENV.DS.host}/token-auth`,
     tokenPropertyName: 'access_token',
   };
-
-
-  if (environment === 'production') {
-    ENV.DS.host = 'https://booze-clues.herokuapp.com'
-  }
 
   return ENV;
 };
