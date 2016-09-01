@@ -23,12 +23,12 @@
   </div>
 {{/list-filter}}
 
-<div class="results-row">
-  <ul>
+<div class="row">
+  {{!-- <ul> --}}
     {{#each cabinet as |ingredient|}}
-      <li>{{ingredient.name}}</li>
+      <p>{{ingredient.name}}</p>
     {{/each}}
-  </ul>
+  {{!-- </ul> --}}
 </div>
   <button class="clicks bold" {{action "findByIngredient"}}>Find the Drinks</button>
   <div class="row">
