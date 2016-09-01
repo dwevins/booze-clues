@@ -1,44 +1,44 @@
-@media screen and (max-width: 768px) {
-  .nav {
-
-    &-pane {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-items: center;
-      background-color: #c5cdcd;
-      width: 100%;
-    }
-
-    .logo {
-      display: none;
-
-      &-img {
-        display: none;
-      }
-    }
-
-    &-links {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-
-      &__link {
-        margin: $gutter;
-        padding: $gutter;
-        font-size: 2rem;
-        text-align: center;
-        width: calc(100% / 3 - #{$gutter} - #{$gutter});
-      }
-    }
-  }
-
-  .account {
-    display: none;
-
-    &__buttons {
-      display: none;
-    }
-  }
-
-}
+// @media screen and (max-width: 768px) {
+//   .nav {
+//
+//     &-pane {
+//       display: flex;
+//       flex-direction: row;
+//       flex-wrap: wrap;
+//       align-items: center;
+//       background-color: #c5cdcd;
+//       width: 100%;
+//     }
+//
+//     .logo {
+//       display: none;
+//
+//       &-img {
+//         display: none;
+//       }
+//     }
+//
+//     &-links {
+//       display: flex;
+//       flex-direction: row;
+//       width: 100%;
+//
+//       &__link {
+//         margin: $gutter;
+//         padding: $gutter;
+//         font-size: 2rem;
+//         text-align: center;
+//         width: calc(100% / 3 - #{$gutter} - #{$gutter});
+//       }
+//     }
+//   }
+//
+//   .account {
+//     display: none;
+//
+//     &__buttons {
+//       display: none;
+//     }
+//   }
+//
+// }
