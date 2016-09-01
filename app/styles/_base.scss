@@ -6,8 +6,14 @@
 }
 
 .display-pane {
-  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   overflow-y: scroll;
   background: white;
   padding: $gutter;
+
+  &__main {
+    flex-grow: 1;
+  }
 }
