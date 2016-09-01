@@ -1,9 +1,4 @@
 @media screen and (max-width: 768px) {
-  // //MQ for moving nav pane to bottom
-  // .app {
-  //   flex-direction: column-reverse;
-  // }
-
   .nav {
 
     &-pane {
@@ -43,18 +38,7 @@
 
     &__buttons {
       display: none;
-    //   text-align: center;
-    //   &--btn {
-    //     margin: 0.5 * $gutter;
-    //   }
     }
-  }
-
-  .site-info {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.5rem;
-    text-align: center;
   }
 
 }

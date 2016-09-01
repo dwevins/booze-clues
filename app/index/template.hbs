@@ -71,19 +71,6 @@
       {{/if}}
     </div>
 
-    {{!-- <div class="site-info">
-        <p class="copyright">Designed by James Ridley and Woody Evins</p>
-        <p class="data-source">Data sourced from
-          <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
-        </p>
-        <p class="made-with">
-          Made using
-          <a href="http://emberjs.com/" class="ember-link">Ember</a>
-          and
-          <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
-        </p>
-        <p class="disclaimer">Please drink responsibly</p>
-      </div> --}}
 </div>
 
 </nav>
@@ -107,6 +94,19 @@
 
 <div class="display-pane">
   {{outlet}}
+  <div class="site-info">
+      <p class="copyright">Designed by James Ridley and Woody Evins</p>
+      <p class="data-source">Data sourced from
+        <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
+      </p>
+      <p class="made-with">
+        Made using
+        <a href="http://emberjs.com/" class="ember-link">Ember</a>
+        and
+        <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
+      </p>
+      <p class="disclaimer">Please drink responsibly</p>
+    </div>
   {{#if isRegisterModalVisible}}
     {{#modal-dialog translucentOverlay=true}}
       <div class="modal-head">
@@ -138,18 +138,6 @@
       {{/simple-form}}
     {{/modal-dialog}}
   {{/if}}
-  {{!-- <div class="site-info">
-      <p class="copyright">Designed by James Ridley and Woody Evins</p>
-      <p class="data-source">Data sourced from
-        <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
-      </p>
-      <p class="made-with">
-        Made using
-        <a href="http://emberjs.com/" class="ember-link">Ember</a>
-        and
-        <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
-      </p>
-      <p class="disclaimer">Please drink responsibly</p>
-    </div> --}}
+
 </div>
 </div>
