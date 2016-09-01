@@ -19,7 +19,10 @@
       <div class="side-links">
         <div class="side-links__link">
           {{#link-to 'index.featured' class="links mobile-hide" }}Featured{{/link-to}}
-          {{#link-to 'index.featured' class="links mobile-view side__buttons__clicks" }} <i class="fa fa-home" aria-hidden="true"></i> {{/link-to}}
+          {{#link-to 'index.cabinet' class="links mobile-view side__buttons__clicks" }}
+          <i class="fa fa-glass" aria-hidden="true"></i>
+          {{/link-to}}
+
         </div>
         <div class="side-links__link">
           {{#link-to 'index.browse' class="links mobile-hide" }}Browse{{/link-to}}
@@ -28,11 +31,10 @@
 
         <div class="side-links__link">
           {{#link-to 'index.cabinet' class="links mobile-hide" }}Cabinet{{/link-to}}
-          {{#link-to 'index.cabinet' class="links mobile-view side__buttons__clicks" }}
-          <i class="fa fa-glass" aria-hidden="true"></i>
-            {{!-- <div class="icon">
-              <img src="assets/binoculars.png" alt="" class="icon-image" />
-            </div> --}}
+          {{#link-to 'index.featured' class="links mobile-view side__buttons__clicks" }}
+          <div class="icon">
+            <img src="assets/logo1.png" alt="" class="icon-image" />
+          </div>
           {{/link-to}}
         </div>
         <div class="side-links__link mobile-view">
@@ -118,5 +120,18 @@
       {{/modal-dialog}}
     {{/if}}
     {{outlet}}
+    {{!-- <div class="site-info">
+      <p class="copyright">Designed by James Ridley and Woody Evins</p>
+      <p class="data-source">Data sourced from
+        <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
+      </p>
+      <p class="made-with">
+        Made using
+        <a href="http://emberjs.com/" class="ember-link">Ember</a>
+        and
+        <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
+      </p>
+      <p class="disclaimer">Please drink responsibly</p>
+    </div> --}}
   </div>
 </div>
