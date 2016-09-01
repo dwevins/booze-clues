@@ -19,7 +19,10 @@
       <div class="side-links">
         <div class="side-links__link">
           {{#link-to 'index.featured' class="links mobile-hide" }}Featured{{/link-to}}
-          {{#link-to 'index.featured' class="links mobile-view side__buttons__clicks" }} <i class="fa fa-home" aria-hidden="true"></i> {{/link-to}}
+          {{#link-to 'index.cabinet' class="links mobile-view side__buttons__clicks" }}
+            <i class="fa fa-glass" aria-hidden="true"></i>
+          {{/link-to}}
+
         </div>
         <div class="side-links__link">
           {{#link-to 'index.browse' class="links mobile-hide" }}Browse{{/link-to}}
@@ -28,30 +31,47 @@
 
         <div class="side-links__link">
           {{#link-to 'index.cabinet' class="links mobile-hide" }}Cabinet{{/link-to}}
-          {{#link-to 'index.cabinet' class="links mobile-view side__buttons__clicks" }}
-          <i class="fa fa-glass" aria-hidden="true"></i>
-            {{!-- <div class="icon">
-              <img src="assets/binoculars.png" alt="" class="icon-image" />
-            </div> --}}
+          {{#link-to 'index.featured' class="links mobile-view side__buttons__clicks" }}
+            <div class="icon">
+              <img src="assets/logo1.png" alt="" class="icon-image" />
+            </div>
           {{/link-to}}
         </div>
+        {{#if session.isAuthenticated}}
+
+      <div class="side-links__link">
+          {{#link-to 'index.favorites' class="links mobile-hide" }}Favorites{{/link-to}}
+          {{#link-to 'index.favorites' class="links mobile-view side__buttons__clicks" }}
+            <i class="fa fa-star" aria-hidden="true"></i>
+          {{/link-to}}
+      </div>
+       {{/if}}
+
+
+      {{#if session.isAuthenticated}}
+      <div class="side-links__link mobile-view">
+        <button class="side__buttons__clicks mobile-view" {{action "logOut"}}><i class="fa fa-sign-out" aria-hidden="true"></i></button>
+      </div>
+      {{else}}
         <div class="side-links__link mobile-view">
           <button class="side__buttons__clicks mobile-view" {{action "toggleLoginModal"}}><i class="fa fa-user" aria-hidden="true"></i></button>
         </div>
         <div class="side-links__link mobile-view">
           <button class="side__buttons__clicks mobile-view" {{action "toggleRegisterModal"}}><i class="fa fa-user-plus" aria-hidden="true"></i></button>
         </div>
-      </div>
-      <div class="side__buttons">
-        {{#if session.isAuthenticated}}
-          <button class="side__buttons__clicks mobile-hide" {{action "logOut"}}>Logout</button>
-        {{else}}
-          <button class="side__buttons__clicks mobile-hide" {{action "toggleLoginModal"}}>Login</button>
-          <button class="side__buttons__clicks mobile-hide" {{action "toggleRegisterModal"}}>Register</button>
-        {{/if}}
-      </div>
+      {{/if}}
 
-      {{!-- <div class="site-info">
+    </div>
+    <div class="side__buttons">
+      {{#if session.isAuthenticated}}
+        <button class="side__buttons__clicks mobile-hide" {{action "logOut"}}>Logout</button>
+      {{else}}
+        <button class="side__buttons__clicks mobile-hide" {{action "toggleLoginModal"}}>Login</button>
+        <button class="side__buttons__clicks mobile-hide" {{action "toggleRegisterModal"}}>Register</button>
+      {{/if}}
+    </div>
+
+    {{!-- <div class="site-info">
         <p class="copyright">Designed by James Ridley and Woody Evins</p>
         <p class="data-source">Data sourced from
           <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
@@ -64,59 +84,72 @@
         </p>
         <p class="disclaimer">Please drink responsibly</p>
       </div> --}}
-    </div>
+</div>
 
-  </nav>
+</nav>
 
-  <div class="flash-messages">
-    {{#each flashMessages.queue as |flash|}}
-      {{#flash-message flash=flash class="success-message" as |message|}}
-        {{#if flash.message.icon}}
-          <p>
-            {{fa-icon flash.message.icon size="fw"}} {{flash.message.message}}
-          </p>
-        {{else}}
+<div class="flash-messages">
+  {{#each flashMessages.queue as |flash|}}
+    {{#flash-message flash=flash class="success-message" as |message|}}
+      {{#if flash.message.icon}}
+        <p>
+          {{fa-icon flash.message.icon size="fw"}} {{flash.message.message}}
+        </p>
+      {{else}}
 
-          <p>
-            {{flash.message}}
-          </p>
-        {{/if}}
-      {{/flash-message}}
-    {{/each}}
-  </div>
+        <p>
+          {{flash.message}}
+        </p>
+      {{/if}}
+    {{/flash-message}}
+  {{/each}}
+</div>
 
-  <div class="display-pane">
-    {{#if isRegisterModalVisible}}
-      {{#modal-dialog translucentOverlay=true}}
-        <div class="modal-head">
-          <h3 class="login-register">Register</h3>
+<div class="display-pane">
+  {{outlet}}
+  {{#if isRegisterModalVisible}}
+    {{#modal-dialog translucentOverlay=true}}
+      <div class="modal-head">
+        <h3 class="login-register">Register</h3>
+      </div>
+
+      {{#simple-form onsubmit=(action 'registerUser') as |registerValues|}}
+        {{input value=registerValues.username placeholder='Username'}} {{input value=registerValues.email placeholder='Email' id="email" type="email" class="validate"}} {{input type='password' value=registerValues.password placeholder='Password'}}
+        <div class="register-buttons">
+          <a class="clicks bold" {{action "toggleRegisterModal"}}>Cancel</a>
+          <button class="clicks bold" type="submit">Register</button>
         </div>
+      {{/simple-form}}
 
-        {{#simple-form onsubmit=(action 'registerUser') as |registerValues|}}
-          {{input value=registerValues.username placeholder='Username'}} {{input value=registerValues.email placeholder='Email' id="email" type="email" class="validate"}} {{input type='password' value=registerValues.password placeholder='Password'}}
-          <div class="register-buttons">
-            <a class="clicks" {{action "toggleRegisterModal"}}>Cancel</a>
-            <button type="submit" class="clicks">Register</button>
-          </div>
-        {{/simple-form}}
-
-      {{/modal-dialog}}
-    {{/if}}
-    {{#if isLoginModalVisible}}
-      {{#modal-dialog translucentOverlay=true}}
-        <div class="flex-box">
-          <h3 class="login-register">Login</h3>
-          <a class="no-account" {{action "toggleLoginModal"}}>Need to Register?</a>
+    {{/modal-dialog}}
+  {{/if}}
+  {{#if isLoginModalVisible}}
+    {{#modal-dialog translucentOverlay=true}}
+      <div class="flex-box">
+        <h3 class="login-register">Login</h3>
+        <a class="no-account" {{action "toggleLoginModal"}}>Need to Register?</a>
+      </div>
+      {{#simple-form onsubmit=(action 'login') as |loginValues|}}
+        {{input value=loginValues.email placeholder='Email' id="email" type="email" class="validate"}} {{input type='password' value=loginValues.password placeholder='Password'}}
+        <div class="register-buttons">
+          <a class="clicks bold" {{action "toggleLoginModal"}}>Cancel</a>
+          <button class="clicks bold" type="submit">Login</button>
         </div>
-        {{#simple-form onsubmit=(action 'login') as |loginValues|}}
-          {{input value=loginValues.email placeholder='Email' id="email" type="email" class="validate"}} {{input type='password' value=loginValues.password placeholder='Password'}}
-          <div class="register-buttons">
-            <a class="clicks" {{action "toggleLoginModal"}}>Cancel</a>
-            <button type="submit" class="clicks">Login</button>
-          </div>
-        {{/simple-form}}
-      {{/modal-dialog}}
-    {{/if}}
-    {{outlet}}
-  </div>
+      {{/simple-form}}
+    {{/modal-dialog}}
+  {{/if}}
+  {{!-- <div class="site-info">
+      <p class="copyright">Designed by James Ridley and Woody Evins</p>
+      <p class="data-source">Data sourced from
+        <a href="http://www.absolut.com/us/" class="absolout-link">Absolut</a>
+      </p>
+      <p class="made-with">
+        Made using
+        <a href="http://emberjs.com/" class="ember-link">Ember</a>
+        and
+        <a href="http://materializecss.com/" class="materialize-link">Materialize</a>
+      </p>
+      <p class="disclaimer">Please drink responsibly</p>
+    </div> --}}
+</div>
 </div>

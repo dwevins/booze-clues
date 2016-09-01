@@ -10,39 +10,34 @@
           <div class="fa fa-fw fa-spin fa-glass fa-2x"></div>
         </div>
       {{/if}}
+      <div class="ingredient-frame">
       {{#each filteredDrinks as |ingredient|}}
-        <div class="drink-frame">
           <button class="clicks" {{action "addIngredient" ingredient}}>{{ingredient.name}}</button>
-        </div>
-        {{else}}
-          <p class="drink-frame">
+      {{else}}
+          <p class="ingredient-frame">
             Please Search Again...
           </p>
       {{/each}}
     </div>
-
-    <div class="results-list">
-
     </div>
   </div>
-
-
 {{/list-filter}}
-<div class="results-row">
-<ul>
-  {{#each cabinet as |ingredient|}}
-  <li>{{ingredient.name}}</li>
-  {{/each}}
-  <button class="find-the-drinks" {{action "findByIngredient"}}>Find the Drinks</button>
-</ul>
-<ul>
-  {{#each results as |drink|}}
-  {{#link-to "index.recipe" drink class="drink-recipe-link" }}
-    <div class="drink-frame">
-      <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
-      <p class="drink-frame__name">{{drink.name}}</p>
-    </div>
-  {{/link-to}}
-  {{/each}}
-</ul>
+
+<div class="row">
+  {{!-- <ul> --}}
+    {{#each cabinet as |ingredient|}}
+      <p>{{ingredient.name}}</p>
+    {{/each}}
+  {{!-- </ul> --}}
 </div>
+  <button class="clicks bold" {{action "findByIngredient"}}>Find the Drinks</button>
+  <div class="row">
+    {{#each results as |drink|}}
+      {{#link-to "index.recipe" drink class="drink-recipe-link" }}
+        <div class="drink-frame">
+          <img class="drink-frame__picture" src="{{drink.photoUrl}}" alt="">
+          <p class="drink-frame__name">{{drink.name}}</p>
+        </div>
+      {{/link-to}}
+    {{/each}}
+  </div>
