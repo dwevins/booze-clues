@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
     {{content-for "head"}}
 
     <link rel="stylesheet" href="{{rootURL}}assets/vendor.css">
@@ -17,12 +18,11 @@
   </head>
   <body>
     <div class="ember-load-indicator"
-     style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center">
+     style="min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #000;">
    <p style='font-size: 2rem; text-align: center;'>Servers are making a liquor run,<br>
       please wait<br><br></p>
    <!-- include font-awesome for loading screen -->
-   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-   <span class="fa fa-circle-o-notch fa-spin fa-5x" style='color: #663399'></span>
+   <span class="fa fa-glass fa-spin fa-5x"></span>
  </div>
       {{content-for "body"}}
     <script src="{{rootURL}}assets/vendor.js"></script>
