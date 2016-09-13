@@ -30,7 +30,7 @@ export default Ember.Controller.extend({
     },
 
     blockUserFromSite: function() {
-
+        window.location.replace('https://www.gerber.com/products/product/gerber-fruit-juice-apple');
     },
 
     toggleLoginModal: function() {
